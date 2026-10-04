@@ -1,0 +1,5 @@
+dist-public/
+dist/
+__pycache__/
+.DS_Store
+paper/

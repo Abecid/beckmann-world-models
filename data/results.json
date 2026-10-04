@@ -1,0 +1,163 @@
+{
+  "verified_at": "2026-10-04",
+  "rgb": {
+    "protocol": {
+      "rgb_size": [
+        96,
+        96
+      ],
+      "mse_image_range": [
+        -1,
+        1
+      ],
+      "evaluation_frames": 64,
+      "gt_context_frames": 4,
+      "free_running_prediction_frames": 60,
+      "held_out_videos": {
+        "pusht": 388,
+        "can": 30
+      },
+      "generator_calls_per_chunk": 1,
+      "frames_per_chunk": {
+        "pusht": 4,
+        "can": 2
+      },
+      "reported_epoch_type": "recipe-stage epochs; BWM continues its trained parent"
+    },
+    "bwm_spatial_epoch30": {
+      "pusht": {
+        "epoch": 30,
+        "stage_updates": 118050,
+        "inherited_updates": 182978,
+        "cumulative_updates": 301028,
+        "checkpoint_sha256": "e943b236e45228426bef4c9f25974d8de22bd61fa2745b6ddc7fb72783d287a3",
+        "metrics_source": "runs/spatial_endpoint_v1_20ep/pusht/results/000000118050_paper.json",
+        "ar64": {
+          "mse": 0.009805162252885885,
+          "moving_mse": 0.12473859523240592,
+          "lpips": 0.027951614497068636,
+          "ssim": 0.9754068716057996,
+          "psnr": 31.214265039469645,
+          "videos": 388
+        },
+        "full": {
+          "mse": 0.015397307272651232,
+          "moving_mse": 0.16461112140212208,
+          "lpips": 0.04117765607254114,
+          "ssim": 0.9661744255973568,
+          "psnr": 28.667731056885778,
+          "videos": 400
+        }
+      },
+      "can": {
+        "epoch": 30,
+        "stage_updates": 30000,
+        "inherited_updates": 15000,
+        "cumulative_updates": 45000,
+        "checkpoint_sha256": "adc937037614bdf0dac7872f6674edd1e4c94c967b43f209e498e55f35236b39",
+        "metrics_source": "runs/spatial_endpoint_v1_20ep/can/results/000000030000_paper.json",
+        "ar64": {
+          "mse": 0.00219545805399927,
+          "moving_mse": 0.024215602486704787,
+          "lpips": 0.005589719772494088,
+          "ssim": 0.9843386880026641,
+          "psnr": 34.7477558829651,
+          "videos": 30
+        },
+        "full": {
+          "mse": 0.008157823937168966,
+          "moving_mse": 0.05171908152600129,
+          "lpips": 0.023814989393576978,
+          "ssim": 0.9559510076021291,
+          "psnr": 30.171253084838675,
+          "videos": 30
+        }
+      }
+    },
+    "baselines_epoch5": {
+      "mse_unet": {
+        "pusht": {
+          "mse": 0.0303,
+          "moving_mse": 0.4008,
+          "lpips": 0.0804
+        },
+        "can": {
+          "mse": 0.0051,
+          "moving_mse": 0.0544,
+          "lpips": 0.0104
+        }
+      },
+      "driftworld": {
+        "pusht": {
+          "mse": 0.0314,
+          "moving_mse": 0.4093,
+          "lpips": 0.079
+        },
+        "can": {
+          "mse": 0.0104,
+          "moving_mse": 0.0769,
+          "lpips": 0.0682
+        }
+      }
+    },
+    "sources": [
+      "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/spatial-20ep-progress.md",
+      "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/matched-budget-baselines.md"
+    ]
+  },
+  "native": {
+    "protocol": {
+      "representation": "SD3 latents",
+      "held_out_episodes": {
+        "bridge_v2": 215,
+        "rt1": 198
+      },
+      "predicted_frames": {
+        "bridge_v2": 7079,
+        "rt1": 8409
+      },
+      "gt_context_latents": 4,
+      "predicted_frames_per_chunk": 8,
+      "conditioning": "GT-reanchored chunks",
+      "reference": "decode(encode(gt)) VAE reconstruction",
+      "fvd": "stylegan-v fvd2048_16f, first 16 generated frames",
+      "ssim_psnr_lpips_aggregation": "per video, then average",
+      "fid_aggregation": "all generated frames",
+      "generator_calls_per_frame": 1
+    },
+    "training_episodes": {
+      "bridge_v2": 52969,
+      "rt1": 86634
+    },
+    "bwm_spatial_epoch60": {
+      "bridge_v2": {
+        "psnr": 25.214,
+        "lpips": 0.126,
+        "fid": 50.92,
+        "fvd": 220.49
+      },
+      "rt1": {
+        "psnr": 27.585,
+        "lpips": 0.106,
+        "fid": 36.48,
+        "fvd": 250.01
+      }
+    },
+    "bwm_population_drifting_epoch70": {
+      "variant": "spatial endpoint map + population drifting, K=8, DINOv3 and latent features",
+      "bridge_v2": {
+        "psnr": 25.004,
+        "lpips": 0.111,
+        "fid": 31.86,
+        "fvd": 175.53
+      },
+      "rt1": {
+        "psnr": 27.354,
+        "lpips": 0.092,
+        "fid": 19.77,
+        "fvd": 167.5
+      }
+    },
+    "source": "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/native-bridge-rt1-comparison.md"
+  }
+}

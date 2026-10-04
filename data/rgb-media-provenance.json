@@ -1,0 +1,196 @@
+{
+  "baseline_atlases": {
+    "source_commit": "b0360d0e1b854f8e63fefe012e05e697f581b4c4",
+    "frame_count": 64,
+    "history_frames": 4,
+    "fps": 10,
+    "native_size": [
+      96,
+      96
+    ],
+    "selection": "All eight fixed qualitative episodes, uniformly selected by the source evaluator from eligible validation episodes. No ranking or best-of-sampling selection.",
+    "transform": "Spatial crop of original saved MP4 panels; H.264 re-encoding only. No temporal cuts, interpolation, enhancement, or altered predictions. GT/baseline/BWM are combined into one video to preserve frame synchronization. Display playback is 10 fps, not measured inference throughput.",
+    "tasks": {
+      "pusht": {
+        "episode_ids": [
+          "domain18.zarr::10",
+          "domain18_random_std_10.zarr::50",
+          "domain18_random_std_20.zarr::204",
+          "domain18_random_std_30_v2.zarr::262",
+          "domain18_random_std_40.zarr::324",
+          "domain18_random_std_50.zarr::396",
+          "domain18_random_std_60_v2.zarr::450",
+          "domain18_random_std_70.zarr::496"
+        ],
+        "manifest_sha256": "9f52906f8e1ed91338f77604186e260919bb5ecd588e59efd208f799c7d5a3fb",
+        "methods": {
+          "spatial": {
+            "run": "spatial_endpoint_v1/pusht",
+            "step": 19675,
+            "source": "runs/spatial_endpoint_v1/pusht/qual/000000019675/rollout.mp4",
+            "sha256": "0f81123042d57ee26276e97834611632fe48ea540b0c75fcf6836b6af5313258"
+          },
+          "ours": {
+            "run": "robust_source_v1/pusht",
+            "step": 19675,
+            "source": "runs/robust_source_v1/pusht/qual/000000019675/rollout.mp4",
+            "sha256": "4cfe4cfb2884d18e3c9564f501eed531b9f0c82d3920b4de996e3fc5275acaba"
+          },
+          "driftworld": {
+            "run": "pusht_driftworld",
+            "step": 39350,
+            "source": "runs/pusht_driftworld/qual/000000039350/rollout.mp4",
+            "sha256": "d7faa320920ad8b22d40c4af57099b618d4084bcb725e336ee80322abfa1e848"
+          },
+          "mse": {
+            "run": "pusht_mse",
+            "step": 39350,
+            "source": "runs/pusht_mse/qual/000000039350/rollout.mp4",
+            "sha256": "a688d5164fce13e8a3c5a425131b462675bce2d870c0f5c578f5c4abbb3b81ed"
+          },
+          "gpc": {
+            "run": "pusht_gpc",
+            "step": 19675,
+            "source": "runs/pusht_gpc/qual/000000019675/rollout.mp4",
+            "sha256": "1052084b5679426dafb7eaec0fd148a2617e74c8815368f5e56966f908b0943e"
+          },
+          "avdc": {
+            "run": "pusht_avdc",
+            "step": 9840,
+            "source": "runs/pusht_avdc/qual/000000009840/rollout.mp4",
+            "sha256": "3248a1c213ad0a83d8b84ff06384ad770636f093127c34f322bde19b6df88999"
+          }
+        },
+        "comparison_panels": [
+          "gt",
+          "spatial",
+          "ours",
+          "driftworld",
+          "mse",
+          "gpc",
+          "avdc"
+        ]
+      },
+      "can": {
+        "episode_ids": [
+          "image_v15.hdf5::demo_4",
+          "image_v15.hdf5::demo_17",
+          "image_v15.hdf5::demo_62",
+          "image_v15.hdf5::demo_107",
+          "image_v15.hdf5::demo_156",
+          "image_v15.hdf5::demo_204",
+          "image_v15.hdf5::demo_217",
+          "image_v15.hdf5::demo_267"
+        ],
+        "manifest_sha256": "c07a413865bc17af6ef70d383580dfd3171a851cb2679c7b797d3cd241d7d613",
+        "methods": {
+          "spatial": {
+            "run": "spatial_endpoint_v1/can",
+            "step": 5000,
+            "source": "runs/spatial_endpoint_v1/can/qual/000000005000/rollout.mp4",
+            "sha256": "1a298ad1df927da9506698d79be9b28ec9335e6120c0e2373590e05875c7bad9"
+          },
+          "ours": {
+            "run": "robust_source_v1/can",
+            "step": 5000,
+            "source": "runs/robust_source_v1/can/qual/000000005000/rollout.mp4",
+            "sha256": "0bb6ef1383bacff1760cf18dfdfb862971ccb588230ae207f3d64e6e2229eecc"
+          },
+          "driftworld": {
+            "run": "can_driftworld",
+            "step": 20000,
+            "source": "runs/can_driftworld/qual/000000020000/rollout.mp4",
+            "sha256": "2e00b70b7deb016e92b1ef923463fd3349d7df5d3a18a02d4a7544096a53356e"
+          },
+          "mse": {
+            "run": "can_mse",
+            "step": 20000,
+            "source": "runs/can_mse/qual/000000020000/rollout.mp4",
+            "sha256": "647b9524abee9216850ad419d3c390363db2fece4498cbbb6b9221db2c937573"
+          },
+          "gpc": {
+            "run": "can_gpc",
+            "step": 5000,
+            "source": "runs/can_gpc/qual/000000005000/rollout.mp4",
+            "sha256": "b0d095d4a75db11d2de9d2cc57739cbcc52554206e26ac18f53005bc4ca2ee8a"
+          }
+        },
+        "comparison_panels": [
+          "gt",
+          "spatial",
+          "ours",
+          "driftworld",
+          "mse",
+          "gpc"
+        ]
+      }
+    },
+    "featured": {
+      "pusht": [
+        2,
+        3,
+        1,
+        4,
+        5
+      ],
+      "can": [
+        5,
+        3,
+        4,
+        1
+      ],
+      "hero": {
+        "pusht": 2,
+        "can": 3
+      },
+      "criteria": "Review of 64-frame temporal sequences, supported by display-space moving-region error from the saved videos. These curation diagnostics are not benchmark metrics."
+    },
+    "comparison_display": {
+      "layout": "Responsive grid; one shared video atlas decoded into native 96 \u00d7 96 panels.",
+      "order": [
+        "gt",
+        "spatial",
+        "ours",
+        "driftworld",
+        "mse",
+        "gpc",
+        "avdc"
+      ],
+      "missing": {
+        "can": [
+          "avdc"
+        ]
+      },
+      "transform": "Original saved source panels cropped and concatenated horizontally, re-encoded once to H.264. All 64 source frames retained at 10 fps. No interpolation, enhancement, or altered predictions."
+    }
+  },
+  "featured_spatial_epoch30": {
+    "selection": "Visually selected examples from the saved spatial epoch30 fixed qualitative panel. Not a claim of representative random selection.",
+    "transform": "Original saved panel crops and H.264 re-encoding; all 64 frames preserved. GT and BWM retain common frame timing. No interpolation, enhancement, or prediction editing.",
+    "pusht": {
+      "stage_epoch": 30,
+      "stage_updates": 118050,
+      "source": "runs/spatial_endpoint_v1_20ep/pusht/qual/000000118050/rollout.mp4",
+      "source_sha256": "b95fbfd9d4a071f09b5960ac18a19e848c9328e0ae00a36d0729af430e97cdab",
+      "checkpoint_sha256": "e943b236e45228426bef4c9f25974d8de22bd61fa2745b6ddc7fb72783d287a3",
+      "selected_panels": [
+        2,
+        3,
+        1
+      ]
+    },
+    "can": {
+      "stage_epoch": 30,
+      "stage_updates": 30000,
+      "source": "runs/spatial_endpoint_v1_20ep/can/qual/000000030000/rollout.mp4",
+      "source_sha256": "4ebd1e5a532b84207d4510e67b3eb81ad8068694a8c5468d0e0094a709abdb8c",
+      "checkpoint_sha256": "adc937037614bdf0dac7872f6674edd1e4c94c967b43f209e498e55f35236b39",
+      "selected_panels": [
+        5,
+        3,
+        4
+      ]
+    },
+    "verified_on_server": "2026-10-04"
+  }
+}
