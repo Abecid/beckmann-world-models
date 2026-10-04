@@ -1,98 +1,46 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8faf9">
-  <title>Beckmann World Models · Train the query you deploy</title>
-  <meta name="description" content="Endpoint-aligned, action-conditioned world models. Learn the future directly with one generator call. PushT, Robomimic Can, Bridge-V2, and RT-1.">
-  <link rel="canonical" href="https://abecid.github.io/beckmann-world-models/">
-  <meta property="og:title" content="Beckmann World Models">
-  <meta property="og:description" content="Train the query you deploy. Predict the future in one generator call.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://abecid.github.io/beckmann-world-models/">
-  <meta property="og:image" content="https://abecid.github.io/beckmann-world-models/media/social-cover.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Beckmann World Models">
-  <meta name="twitter:description" content="Train the query you deploy. Predict the future in one generator call.">
-  <meta name="twitter:image" content="https://abecid.github.io/beckmann-world-models/media/social-cover.jpg">
-  <link rel="icon" href="figures/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="nav wrap">
-    <a class="wordmark" href="#" aria-label="Beckmann World Models home"><span class="brand-mark" aria-hidden="true">B</span><span>BWM</span></a>
-    <nav aria-label="Project navigation"><a href="#method">Method</a><a href="#results">Results</a><a href="#real-robot">Real robots</a></nav>
-  </header>
-  <main id="main">
-    <section class="hero wrap">
-      <div class="hero-layout"><div class="hero-intro">
-      <div class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> ONE-CALL ACTION-CONDITIONED WORLD MODELS</div>
-      <h1>Beckmann<br><span>World Models</span></h1>
-      <p class="hero-line">Train the query you deploy.</p>
-      <p class="hero-description">From observations and actions to future video.<br>One generator call. No pretrained generative teacher.</p>
-      <div class="authors" aria-label="Authors and affiliations">
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff"><title>Beckmann World Models</title>
+<meta name="description" content="Direct terminal-map learning for one-step action-conditioned prediction.">
+<link rel="canonical" href="https://abecid.com/beckmann-world-models/">
+<meta property="og:title" content="Beckmann World Models"><meta property="og:type" content="website">
+<meta property="og:description" content="Direct terminal-map learning for one-step action-conditioned prediction.">
+<meta property="og:url" content="https://abecid.com/beckmann-world-models/">
+<meta property="og:image" content="https://abecid.com/beckmann-world-models/figures/method-overview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="figures/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body><main class="wrap">
+<header class="project-header"><h1>Beckmann World Models</h1>
+<p class="subtitle">Direct Terminal-Map Learning for<br>One-Step Action-Conditioned Prediction</p><div class="authors" aria-label="Authors and affiliations">
         <span><strong>Adam Lee</strong><small>Berkeley</small></span>
         <span><strong>Shobhit Agarwal</strong><small>Stanford</small></span>
         <span><strong>JP Suh</strong><small>Google DeepMind</small></span>
-      </div>
-      <div class="resource-links"><a class="button subtle" href="#method">How it works <span aria-hidden="true">↓</span></a></div>
-
-      </div><div class="hero-showcase">
-      <div class="showcase-head"><span class="eyebrow">THE FUTURE, GENERATED DIRECTLY</span><button type="button" class="play-button" id="play-showcase" aria-pressed="false"><span aria-hidden="true">▶</span> Play examples</button></div>
-      <div class="hero-videos">
-        <article class="video-card" data-task="pusht">
-          <div class="card-heading"><h2>PushT</h2><span>RGB · spatial epoch 30</span></div>
-          <div class="panel-labels"><span>Ground truth</span><span><b>BWM</b></span></div>
-          <video muted loop playsinline preload="metadata" poster="media/pusht-30ep-2.jpg" src="media/pusht-30ep-2.mp4" aria-label="Selected PushT episode: ground truth left and BWM prediction right"></video>
-          <div class="clip-picker" role="group" aria-label="Selected PushT examples"><span>SELECTED EXAMPLES</span><button type="button" data-sample="2" aria-pressed="true">01</button><button type="button" data-sample="3" aria-pressed="false">02</button><button type="button" data-sample="1" aria-pressed="false">03</button></div>
-        </article>
-        <article class="video-card" data-task="can">
-          <div class="card-heading"><h2>Robomimic Can</h2><span>RGB · spatial epoch 30</span></div>
-          <div class="panel-labels"><span>Ground truth</span><span><b>BWM</b></span></div>
-          <video muted loop playsinline preload="metadata" poster="media/can-30ep-5.jpg" src="media/can-30ep-5.mp4" aria-label="Selected Robomimic Can episode: ground truth left and BWM prediction right"></video>
-          <div class="clip-picker" role="group" aria-label="Selected Robomimic Can examples"><span>SELECTED EXAMPLES</span><button type="button" data-sample="5" aria-pressed="true">01</button><button type="button" data-sample="3" aria-pressed="false">02</button><button type="button" data-sample="4" aria-pressed="false">03</button></div>
-        </article>
-      </div>
-      <p class="caption hero-caption">4 observed + 60 generated frames · free-running RGB prediction · 10 fps playback</p>
-      </div></div>
-      <div class="hero-facts" aria-label="Model overview"><div><strong>1</strong><span>generator call</span></div><div><strong>4</strong><span>robotics benchmarks</span></div><div><strong>RGB + latent</strong><span>conditional endpoint maps</span></div></div>
-    </section>
-
-    <section class="section wrap" id="method">
-      <div class="section-heading"><span class="eyebrow">01 / THE IDEA</span><h2>Learn the destination.</h2><p>Beckmann transport learns a terminal map.<br>BWM aligns its training with the exact query used to predict the future.</p></div>
-      <figure class="pipeline">
-        <div class="pipeline-context"><span class="mini-label">OBSERVED HISTORY</span><div class="frame-strip"><img src="media/history-1.jpg" alt="First observed PushT frame"><img src="media/history-2.jpg" alt="Second observed PushT frame"><img src="media/history-3.jpg" alt="Third observed PushT frame"><img src="media/history-4.jpg" alt="Fourth observed PushT frame"></div><div class="action-row"><span>PROPOSED ACTIONS</span><span class="actions" role="img" aria-label="Sequence of proposed actions"><svg class="icon" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 4 12 12M4 12h8V4"/></svg> ↓ <svg class="icon" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M12 4 4 12M4 4v8h8"/></svg> ←</span></div></div>
-        <div class="pipeline-map"><div class="noise-input"><img src="media/noise.png" alt="Gaussian future noise"><span>Noise <i>z</i></span></div><div class="map-arrow" aria-hidden="true">↓</div><div class="map-box"><span>BECKMANN ENDPOINT MAP</span><strong><i>T</i><sub>θ</sub>(<i>z, h, a</i>)</strong></div></div>
-        <div class="pipeline-output"><span class="mini-label">PREDICTED FUTURE</span><div class="frame-strip"><img src="media/future-1.jpg" alt="First predicted future frame"><img src="media/future-2.jpg" alt="Second predicted future frame"><img src="media/future-3.jpg" alt="Third predicted future frame"><img src="media/future-4.jpg" alt="Fourth predicted future frame"></div><span class="one-call">ONE GENERATOR CALL <svg class="icon" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"/></svg></span></div>
-        <figcaption class="sr-only">Four observed frames, proposed actions, and Gaussian future noise condition a Beckmann endpoint map that predicts a future video chunk in one generator call.</figcaption>
-      </figure>
-      <div class="method-detail">
-        <figure class="geometry-card">
-          <svg viewBox="0 0 500 235" role="img" aria-labelledby="geometry-title geometry-desc"><title id="geometry-title">Train the deployed source endpoint</title><desc id="geometry-desc">Points along a transport trajectory share a terminal prediction. Source supervision directly connects the noise endpoint used at deployment to its recorded future.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#087e8b"/></marker></defs><path d="M56 155C158-15 242 200 424 67" fill="none" stroke="#b9d4d8" stroke-width="3" stroke-dasharray="5 7"/><path d="M56 155 423 67" fill="none" stroke="#087e8b" stroke-width="2.5" marker-end="url(#arrow)"/><path d="m164 80 258-12m-151 36 151-36" stroke="#a6bec2" stroke-width="1.5" fill="none"/><circle cx="56" cy="155" r="11" fill="#087e8b"/><circle cx="164" cy="80" r="7" fill="#b9d4d8"/><circle cx="271" cy="104" r="7" fill="#b9d4d8"/><circle cx="424" cy="67" r="11" fill="#e78955"/><text x="29" y="193" fill="#1c343c" font-size="16">source z</text><text x="366" y="38" fill="#1c343c" font-size="16">future y</text><text x="118" y="150" fill="#087e8b" font-size="16" transform="rotate(-13 118 150)">supervise the deployed query</text><text x="38" y="221" fill="#647b80" font-size="12">Schematic conditional transport trajectory · fixed history and actions</text></svg>
-        </figure>
-        <div class="equation-card"><span class="mini-label">ENDPOINT-ALIGNED LEARNING</span><div class="equation" role="math" aria-label="Source loss equals expected squared error between the predicted source endpoint and the true future"><i>ℒ</i><sub>src</sub> = 𝔼 ‖<i>T</i><sub>θ</sub>(<i>z,h,a</i>) − <i>y</i>‖²</div><p>Transport geometry + direct source supervision.</p><div class="training-tags"><span>Motion</span><span>Temporal changes</span><span>Spatial features</span><span>Generated history</span></div><small>Training signals shape the endpoint; deployment stays one call.</small></div>
-      </div>
-    </section>
-
-    <section class="section result-section" id="results"><div class="wrap">
-      <div class="section-heading"><span class="eyebrow">02 / RGB PREDICTION</span><h2>Sharper futures.<br>Stronger motion fidelity.</h2></div>
-      <div class="result-highlights"><div><span>PushT · BWM spatial, epoch 30</span><strong>0.0098</strong><small>RGB MSE ↓</small></div><div><span>Can · BWM spatial, epoch 30</span><strong>0.0056</strong><small>LPIPS ↓</small></div><div><span>Can · BWM spatial, epoch 30</span><strong>0.984</strong><small>SSIM ↑</small></div></div>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="RGB benchmark results"><table class="rgb-table"><thead><tr><th rowspan="2" scope="col">Model / recipe</th><th colspan="3" scope="colgroup">PushT</th><th colspan="3" scope="colgroup">Robomimic Can</th></tr><tr><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th></tr></thead><tbody><tr><th scope="row">MSE U-Net <small>5 epochs</small></th><td>0.0303</td><td>0.4008</td><td>0.0804</td><td>0.0051</td><td>0.0544</td><td>0.0104</td></tr><tr><th scope="row">DriftWorld <small>5 epochs</small></th><td>0.0314</td><td>0.4093</td><td>0.0790</td><td>0.0104</td><td>0.0769</td><td>0.0682</td></tr><tr class="ours"><th scope="row">BWM + spatial <small>spatial stage · 30 epochs</small></th><td><strong>0.0098</strong></td><td><strong>0.1247</strong></td><td><strong>0.0280</strong></td><td><strong>0.0022</strong></td><td><strong>0.0242</strong></td><td><strong>0.0056</strong></td></tr></tbody></table></div>
-      <p class="caption">388 PushT / 30 Can held-out videos · 64-frame evaluation: 4 GT context frames, then 60 free-running predictions · 96 × 96 RGB. <a href="data/results.json">Metrics &amp; protocols <svg class="icon" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"/></svg></a></p>
-    </div></section>
-
-    <section class="section wrap" id="real-robot">
-      <div class="section-heading"><span class="eyebrow">03 / REAL-ROBOT VIDEO</span><h2>From pushing to<br>real-world manipulation.</h2><p>Conditional endpoint maps extend to Bridge-V2 and RT-1.<br>The population-drifting variant delivers perceptual fidelity with one call per frame.</p></div>
-      <div id="native-gallery" class="native-gallery" hidden></div>
-      <div class="native-facts"><div><strong>Bridge-V2</strong><span>52,969 training episodes · 215 held out</span></div><div><strong>RT-1</strong><span>86,634 training episodes · 198 held out</span></div></div>
-      <div class="table-scroll" tabindex="0" role="region" aria-label="Bridge-V2 and RT-1 native latent prediction results"><table><thead><tr><th scope="col">Dataset / model</th><th scope="col">PSNR ↑</th><th scope="col">LPIPS ↓</th><th scope="col">FID ↓</th><th scope="col">FVD ↓</th><th scope="col">NFE / frame</th></tr></thead><tbody><tr><th scope="row">Bridge-V2 · BWM spatial <small>epoch 60</small></th><td>25.214</td><td>0.126</td><td>50.92</td><td>220.49</td><td>1</td></tr><tr class="ours"><th scope="row">Bridge-V2 · BWM + population drifting <small>epoch 70</small></th><td>25.004</td><td><strong>0.111</strong></td><td><strong>31.86</strong></td><td><strong>175.53</strong></td><td>1</td></tr><tr class="dataset-start"><th scope="row">RT-1 · BWM spatial <small>epoch 60</small></th><td>27.585</td><td>0.106</td><td>36.48</td><td>250.01</td><td>1</td></tr><tr class="ours"><th scope="row">RT-1 · BWM + population drifting <small>epoch 70</small></th><td>27.354</td><td><strong>0.092</strong></td><td><strong>19.77</strong></td><td><strong>167.50</strong></td><td>1</td></tr></tbody></table></div>
-      <p class="caption">SD3 latent prediction · 4 GT context latents · 8-frame GT-reanchored chunks · metrics against VAE-reconstructed ground truth · FVD on the first 16 generated frames. Population variant: K = 8, DINOv3 + latent features. <a href="data/results.json">Metrics &amp; protocols <svg class="icon" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M4 4h8v8"/></svg></a></p>
-    </section>
-    <section class="closing wrap"><span class="eyebrow">THE DEPLOYMENT QUERY IS THE TRAINING TARGET</span><p>Observations. Actions. Noise.<br><span>The future, in one call.</span></p></section>
-  </main>
-  <footer class="footer wrap"><div><a class="wordmark" href="#">BWM</a><span>Beckmann World Models · 2026</span></div><div><a href="data/results.json">Results</a><a href="https://arxiv.org/html/2608.01692v3">BTM foundation</a></div></footer>
-</body>
-</html>
+      </div></header>
+<figure class="main-figure" id="overview"><img src="figures/method-overview.png" alt="Conditional Beckmann terminal-map conservation, source supervision, and motion and temporal losses">
+<figcaption>BWM combines terminal-map transport training with direct supervision of predictions from noise. Inference uses one call per RGB chunk or latent frame.</figcaption></figure>
+<section id="qualitative"><div class="section-heading"><h2>Qualitative results</h2><button id="play-examples" type="button" aria-pressed="false">Play examples</button></div>
+<div class="video-grid"><figure class="video-card"><h3>PushT<small>Spatial epoch 30</small></h3><div class="panel-labels"><span>Recorded frames</span><span>BWM</span></div><video muted loop playsinline preload="metadata" poster="media/pusht-30ep-2.jpg" src="media/pusht-30ep-2.mp4" aria-label="Selected PushT example with matched reference and BWM prediction"></video></figure><figure class="video-card"><h3>Robomimic Can<small>Spatial epoch 30</small></h3><div class="panel-labels"><span>Recorded frames</span><span>BWM</span></div><video muted loop playsinline preload="metadata" poster="media/can-30ep-3.jpg" src="media/can-30ep-3.mp4" aria-label="Selected Robomimic Can example with matched reference and BWM prediction"></video></figure><figure class="video-card"><h3>Bridge-V2<small>Population refinement, epoch 70</small></h3><video muted loop playsinline preload="metadata" poster="media/bridge-population70-case01.jpg" src="media/bridge-population70-case01.mp4" aria-label="Selected Bridge-V2 example with matched reference and BWM prediction"></video></figure><figure class="video-card"><h3>RT-1<small>Population refinement, epoch 70</small></h3><video muted loop playsinline preload="metadata" poster="media/rt1-population70-case04.jpg" src="media/rt1-population70-case04.mp4" aria-label="Selected RT-1 example with matched reference and BWM prediction"></video></figure></div>
+<p class="caption">Selected examples. RGB: four observed and 60 predicted frames. Native: VAE-reconstructed references, recorded context reset every eight frames.</p>
+<figure class="comparison-figure"><img src="figures/rgb-comparison-grid.png" alt="Matched PushT and Can predictions across ground truth, DriftWorld, regression, GPC, AVDC, and BWM at spatial epochs 5 and 30" loading="lazy">
+<figcaption>Matched histories and actions at frames 4, 23, 43, and 63. Baselines train from scratch for five epochs. BWM uses staged training.</figcaption></figure></section>
+<section id="quantitative"><h2>Quantitative results</h2><h3>RGB prediction</h3>
+<div class="table-scroll" tabindex="0" role="region" aria-label="RGB prediction results"><table class="rgb-table"><thead><tr><th rowspan="2" scope="col">Model and training</th><th colspan="3" scope="colgroup">PushT</th><th colspan="3" scope="colgroup">Robomimic Can</th></tr><tr><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th></tr></thead><tbody><tr><th scope="row">MSE U-Net <small>5 epochs</small></th><td>0.0303</td><td>0.4008</td><td>0.0804</td><td>0.0051</td><td>0.0544</td><td>0.0104</td></tr><tr><th scope="row">DriftWorld <small>5 epochs</small></th><td>0.0314</td><td>0.4093</td><td>0.0790</td><td>0.0104</td><td>0.0769</td><td>0.0682</td></tr><tr><th scope="row">GPC <small>5 epochs</small></th><td>0.0630</td><td>1.4241</td><td>0.1609</td><td>0.0276</td><td>0.3103</td><td>0.0589</td></tr><tr><th scope="row">AVDC <small>5 epochs</small></th><td>0.0684</td><td>1.1840</td><td>0.1860</td><td>0.0400</td><td>0.2644</td><td>0.1194</td></tr><tr class="ours"><th scope="row">BWM + spatial <small>Spatial epoch 30, staged training</small></th><td><strong>0.0098</strong></td><td><strong>0.1247</strong></td><td><strong>0.0280</strong></td><td><strong>0.0022</strong></td><td><strong>0.0242</strong></td><td><strong>0.0056</strong></td></tr></tbody></table></div>
+<p class="caption">388 PushT and 30 Can episodes. Four observed and 60 autoregressive predictions at 96 × 96 resolution.</p>
+<h3>Native video prediction</h3><div class="table-scroll" tabindex="0" role="region" aria-label="Native baseline comparison and separate full-data continuations"><table class="native-table"><thead><tr><th rowspan="2" scope="col">Model and training</th><th colspan="3" scope="colgroup">Bridge-V2</th><th colspan="3" scope="colgroup">RT-1</th><th rowspan="2" scope="col">Calls per frame</th></tr><tr><th scope="col">SSIM ↑</th><th scope="col">PSNR ↑</th><th scope="col">LPIPS ↓</th><th scope="col">SSIM ↑</th><th scope="col">PSNR ↑</th><th scope="col">LPIPS ↓</th></tr></thead><tbody>
+      <tr class="regime"><th colspan="8">Matched subset · 30 epochs · 2,078 Bridge-V2 and 2,041 RT-1 training episodes</th></tr>
+      <tr><th scope="row">DriftWorld <small>Phase 1</small></th><td>.813</td><td>21.919</td><td>.104</td><td>.814</td><td>22.419</td><td>.129</td><td>1</td></tr>
+      <tr><th scope="row">MSE U-Net</th><td>.813</td><td>22.439</td><td>.166</td><td>.815</td><td>23.026</td><td>.179</td><td>1</td></tr>
+      <tr><th scope="row">GPC</th><td>.642</td><td>19.932</td><td>.335</td><td>.694</td><td>20.692</td><td>.294</td><td>3</td></tr>
+      <tr><th scope="row">AVDC</th><td>.746</td><td>19.595</td><td>.159</td><td>.749</td><td>20.269</td><td>.175</td><td>100</td></tr>
+      <tr class="ours"><th scope="row">BWM spatial <small>Epoch 30</small></th><td>.796</td><td>22.130</td><td>.155</td><td>.802</td><td>23.147</td><td>.166</td><td>1</td></tr>
+      <tr class="regime"><th colspan="8">Separate full-data continuations · 52,969 Bridge-V2 and 86,634 RT-1 training episodes</th></tr>
+      <tr><th scope="row">BWM spatial <small>Epoch 60 · subset parent + full-data continuation</small></th><td>.860</td><td>25.214</td><td>.126</td><td>.888</td><td>27.585</td><td>.106</td><td>1</td></tr>
+      <tr class="ours"><th scope="row">BWM + population refinement <small>Epoch 70 · 10 additional epochs</small></th><td>.856</td><td>25.004</td><td>.111</td><td>.884</td><td>27.354</td><td>.092</td><td>1</td></tr>
+      </tbody></table></div>
+<p class="caption">215 Bridge-V2 and 198 RT-1 episodes. Recorded context resets every eight frames. Metrics use VAE-reconstructed references. K = 8 during population training.</p>
+<div class="evidence-grid">
+<figure><img src="figures/source-diagnostic.svg" alt="Can errors from pure-noise to data-boundary inputs" loading="lazy"><figcaption>Can source diagnostic: 90 windows and four source draws. The full recipe is the motion-aware parent.</figcaption></figure>
+<figure><img src="figures/convergence.svg" alt="Can LPIPS versus cumulative training-loop hours including inherited training" loading="lazy"><figcaption>Can LPIPS and cumulative training time, including preceding stages. Evaluation waits are excluded.</figcaption></figure>
+</div></section></main></body></html>

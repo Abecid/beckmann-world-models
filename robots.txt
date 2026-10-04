@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://abecid.github.io/beckmann-world-models/sitemap.xml
+Sitemap: https://abecid.com/beckmann-world-models/sitemap.xml

@@ -1,0 +1,387 @@
+{
+  "frames": [
+    4,
+    23,
+    43,
+    63
+  ],
+  "tasks": {
+    "pusht": {
+      "title": "PushT",
+      "sample": 2
+    },
+    "can": {
+      "title": "Robomimic Can",
+      "sample": 3
+    }
+  },
+  "models": {
+    "gt": {
+      "label": "Ground truth",
+      "recipe": "Recorded"
+    },
+    "driftworld": {
+      "label": "DriftWorld",
+      "recipe": "5 epochs"
+    },
+    "mse": {
+      "label": "MSE U-Net",
+      "recipe": "5 epochs"
+    },
+    "gpc": {
+      "label": "GPC",
+      "recipe": "5 epochs"
+    },
+    "avdc": {
+      "label": "AVDC",
+      "recipe": "5 epochs"
+    },
+    "bwm5": {
+      "label": "BWM spatial",
+      "recipe": "Spatial stage \u00b7 5 epochs"
+    },
+    "bwm30": {
+      "label": "BWM spatial",
+      "recipe": "Spatial stage \u00b7 30 epochs"
+    }
+  },
+  "images": {
+    "pusht/gt/4": {
+      "src": "media/comparison/pusht-gt-4.png",
+      "sha256": "025d80ad8aaeae854369ead3dc7528e7abb2fe9128230ce41fd3496145531019",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/gt/23": {
+      "src": "media/comparison/pusht-gt-23.png",
+      "sha256": "65c74c8a5a1d49e3030c9e3dd2f9977da3cfd464e170261d4ea15f945e85cf1a",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/gt/43": {
+      "src": "media/comparison/pusht-gt-43.png",
+      "sha256": "cb001df0e8095646bed81bf7684c2fc6ae82705091a75bb1e66932070686c2b6",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/gt/63": {
+      "src": "media/comparison/pusht-gt-63.png",
+      "sha256": "35fc80b4372d6be7c3be974d455b35df956b852149c52eab44123418d6961c74",
+      "width": 131,
+      "height": 130
+    },
+    "can/gt/4": {
+      "src": "media/comparison/can-gt-4.png",
+      "sha256": "0c013e44d5f4e4a0b90e2ad0b837906c52e3b9e45bcf88dcae1bb198d0cb1bb9",
+      "width": 130,
+      "height": 130
+    },
+    "can/gt/23": {
+      "src": "media/comparison/can-gt-23.png",
+      "sha256": "2e4cc34f21efea4c58d70aefa89f02c1aeec9da7799e93cb81cde1ac1e9d87d8",
+      "width": 130,
+      "height": 130
+    },
+    "can/gt/43": {
+      "src": "media/comparison/can-gt-43.png",
+      "sha256": "5449e48b5e80199e1347b71eae08b9e4bd4abd249a8fafa7cbea8dc7376557cf",
+      "width": 130,
+      "height": 130
+    },
+    "can/gt/63": {
+      "src": "media/comparison/can-gt-63.png",
+      "sha256": "c354d055d59ce96fd193bfa6733bc4bf6d9a253be4755ffe70ba28c389c3fe31",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/driftworld/4": {
+      "src": "media/comparison/pusht-driftworld-4.png",
+      "sha256": "c419da567b9562bbeef7e8b35ffb5f9e0fc2d7ce263b824de59d776e6705aa0a",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/driftworld/23": {
+      "src": "media/comparison/pusht-driftworld-23.png",
+      "sha256": "58e3ab93905526f9577e37083798570459f6af053abc70723eba0050c8582179",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/driftworld/43": {
+      "src": "media/comparison/pusht-driftworld-43.png",
+      "sha256": "3ed3fef87e42e22d3bad242aff22cb69be42e56c27e20dd1b264d6b01b680798",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/driftworld/63": {
+      "src": "media/comparison/pusht-driftworld-63.png",
+      "sha256": "615c30f155032a0990f81e6ca0f6c59203c5d52997d1ba4a9f985c0cd2d5215b",
+      "width": 131,
+      "height": 130
+    },
+    "can/driftworld/4": {
+      "src": "media/comparison/can-driftworld-4.png",
+      "sha256": "269a8aa8062da5534461fd1d54ef1e32950b262e640fc3c118cdb0bc9d7d0491",
+      "width": 130,
+      "height": 130
+    },
+    "can/driftworld/23": {
+      "src": "media/comparison/can-driftworld-23.png",
+      "sha256": "8e18d496af72dde797d82004f5c4b1eda4a4e8421bd098b138320db9370df57a",
+      "width": 130,
+      "height": 130
+    },
+    "can/driftworld/43": {
+      "src": "media/comparison/can-driftworld-43.png",
+      "sha256": "8c31ba0679d6da68487cb2bde9029e3b0834b729793420a25b148b0a8635d021",
+      "width": 130,
+      "height": 130
+    },
+    "can/driftworld/63": {
+      "src": "media/comparison/can-driftworld-63.png",
+      "sha256": "36b0c0a152b09d1100a0de1a47eaae0eabc01a4938e27573598f54d705d68d02",
+      "width": 131,
+      "height": 130
+    },
+    "pusht/mse/4": {
+      "src": "media/comparison/pusht-mse-4.png",
+      "sha256": "c03a0c045d75a933904959b194e3bd442ead1dbb8b8c4c1596b3936d2d1daf34",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/mse/23": {
+      "src": "media/comparison/pusht-mse-23.png",
+      "sha256": "2d5d3f81c09c0b04fb3f5e9769c73370e9d8064b217ec7d838b38debab3f0f31",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/mse/43": {
+      "src": "media/comparison/pusht-mse-43.png",
+      "sha256": "2ff9f62bdf1736eedece52120507539d26c22b771dcf0c3169ab04bef0c46201",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/mse/63": {
+      "src": "media/comparison/pusht-mse-63.png",
+      "sha256": "2f14ee4f718fbae4b2c0c8846d6d67ac71a0b1a08b782f84199800fc1863fd71",
+      "width": 131,
+      "height": 131
+    },
+    "can/mse/4": {
+      "src": "media/comparison/can-mse-4.png",
+      "sha256": "aac9762dd44859353b27dbb2822d44298ea3fff0a2fdbf1a348b1487a3db38e2",
+      "width": 130,
+      "height": 131
+    },
+    "can/mse/23": {
+      "src": "media/comparison/can-mse-23.png",
+      "sha256": "66caf18920e25d57d81afd61770f4053c22672a0c4a2bf0da132581e4f9f611c",
+      "width": 130,
+      "height": 131
+    },
+    "can/mse/43": {
+      "src": "media/comparison/can-mse-43.png",
+      "sha256": "d14a44e252ab6fd1e3466419ff6252957a6cfc95fcfab31062b9d3c965ab6e71",
+      "width": 130,
+      "height": 131
+    },
+    "can/mse/63": {
+      "src": "media/comparison/can-mse-63.png",
+      "sha256": "c2210d050504ec0fa96642cac82d21b57715e567a2ac06221ae6baa26bb3afd7",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/gpc/4": {
+      "src": "media/comparison/pusht-gpc-4.png",
+      "sha256": "ffc10dea1fcfc8cdbdaebbe40e71126e0fce0de82b90eed6d9cc86a788169af6",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/gpc/23": {
+      "src": "media/comparison/pusht-gpc-23.png",
+      "sha256": "945c2c68ca63bd45e87689f3b1e573ce27809df0f33e472c691ef8678e2a4cdb",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/gpc/43": {
+      "src": "media/comparison/pusht-gpc-43.png",
+      "sha256": "1d92bd53058f3488db3d84775611efacb0b6553aa93e3a0a91177c2cf08bc2d1",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/gpc/63": {
+      "src": "media/comparison/pusht-gpc-63.png",
+      "sha256": "3229969255914022ec75c59ac8f722a03315820bbdcfbff27e62c07e200a7279",
+      "width": 131,
+      "height": 131
+    },
+    "can/gpc/4": {
+      "src": "media/comparison/can-gpc-4.png",
+      "sha256": "51e5cd1039586061b62174652d8190ae70d72cdd6a3b493a9f4f7020ca1f297c",
+      "width": 130,
+      "height": 131
+    },
+    "can/gpc/23": {
+      "src": "media/comparison/can-gpc-23.png",
+      "sha256": "b471017b3d258164382c9298338ff47445d3520a3bd786218934f3da22c429b6",
+      "width": 130,
+      "height": 131
+    },
+    "can/gpc/43": {
+      "src": "media/comparison/can-gpc-43.png",
+      "sha256": "180fb0d4baa81ee94a29fb8c4da753c035173d48c69de0cc7372ebf8649abb0f",
+      "width": 130,
+      "height": 131
+    },
+    "can/gpc/63": {
+      "src": "media/comparison/can-gpc-63.png",
+      "sha256": "47f61cae6dfc3bd1eb59f488d844f77e191af79ef01e5cbd3970b2e1851574a9",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/avdc/4": {
+      "src": "media/comparison/pusht-avdc-4.png",
+      "sha256": "0cdadc3beab316731f4343e8be85caaa91ae5ca6b2f37978f11901582195d9fa",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/avdc/23": {
+      "src": "media/comparison/pusht-avdc-23.png",
+      "sha256": "f681bd5440cd6cf6fa9f5dcf51b7222e30a0611b20d9bf253c498b0cceea2ab4",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/avdc/43": {
+      "src": "media/comparison/pusht-avdc-43.png",
+      "sha256": "5b7296656d808656f1c52cea85b2380945d3b819c8d2edfad9b5c4d613606715",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/avdc/63": {
+      "src": "media/comparison/pusht-avdc-63.png",
+      "sha256": "649514fe15dd5c66e8f81d141df42aa72fd1613787c3bf76e00c849623997bee",
+      "width": 131,
+      "height": 131
+    },
+    "can/avdc/4": {
+      "src": "media/comparison/can-avdc-4.png",
+      "sha256": "c5c092fe03bfe09f5dc24036c048d3731cf1f695557e22e899b93f9d6c5a5769",
+      "width": 130,
+      "height": 131
+    },
+    "can/avdc/23": {
+      "src": "media/comparison/can-avdc-23.png",
+      "sha256": "d51ce7933e7e20a8fb803f7ee37539d4b1a71829f1260a1df8a8d756db5f618a",
+      "width": 130,
+      "height": 131
+    },
+    "can/avdc/43": {
+      "src": "media/comparison/can-avdc-43.png",
+      "sha256": "d2415e997091e5488d2edf4b95e7bcb4bb4962f1c536ae2e3a25928072439bb5",
+      "width": 130,
+      "height": 131
+    },
+    "can/avdc/63": {
+      "src": "media/comparison/can-avdc-63.png",
+      "sha256": "beabf30aac3df7a4b342d882e6e69cf76f3a797af80015c0f87fcc30c9c0dbf3",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/bwm5/4": {
+      "src": "media/comparison/pusht-bwm5-4.png",
+      "sha256": "8e0bee63b037aff8d3f6dce944deb6c9a945e07bd7416312cb32d5b0a50be3eb",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/bwm5/23": {
+      "src": "media/comparison/pusht-bwm5-23.png",
+      "sha256": "2aa2ce678674ba5efffd45f93709709b170e9fc9c9e4825aba7993d9ad96034d",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/bwm5/43": {
+      "src": "media/comparison/pusht-bwm5-43.png",
+      "sha256": "66b6aef55cb720d0e33991646ef5e596829f6a63857a31a6a9d9dbf71bbe8bdc",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/bwm5/63": {
+      "src": "media/comparison/pusht-bwm5-63.png",
+      "sha256": "969769a22daaa44b0684f57500ecf0e8cde1592b23201e2eb8b0834ded9d88dc",
+      "width": 131,
+      "height": 131
+    },
+    "can/bwm5/4": {
+      "src": "media/comparison/can-bwm5-4.png",
+      "sha256": "ff0dd12accb7e597048a91ab904796881b4900e64c5892df52e8c579a60a4948",
+      "width": 130,
+      "height": 131
+    },
+    "can/bwm5/23": {
+      "src": "media/comparison/can-bwm5-23.png",
+      "sha256": "29199e7a2d9a47c88efcc375ced3eea4176af413ce8107673f19433124531340",
+      "width": 130,
+      "height": 131
+    },
+    "can/bwm5/43": {
+      "src": "media/comparison/can-bwm5-43.png",
+      "sha256": "c93078163b24286a6393901b24224479827d658f3f7967069569fac035f4a55b",
+      "width": 130,
+      "height": 131
+    },
+    "can/bwm5/63": {
+      "src": "media/comparison/can-bwm5-63.png",
+      "sha256": "4ed1c3e6b4b4d8f7c319e2e233bfe8550b92bc28b53ff6e975e4634628869871",
+      "width": 131,
+      "height": 131
+    },
+    "pusht/bwm30/4": {
+      "src": "media/comparison/pusht-bwm30-4.png",
+      "sha256": "86013a35aa77b162cfef7a63b1ea3f3f56d95d420907a2f4d2221f0bc6646bc9",
+      "width": 96,
+      "height": 96
+    },
+    "pusht/bwm30/23": {
+      "src": "media/comparison/pusht-bwm30-23.png",
+      "sha256": "d8ca441c0ddf8bb18764a5da1ec9e86e8385fedef2e78242cb312552a7c233b8",
+      "width": 96,
+      "height": 96
+    },
+    "pusht/bwm30/43": {
+      "src": "media/comparison/pusht-bwm30-43.png",
+      "sha256": "7502b8a6f97deb93f3307d9cab96e73b7dec186bd98597c77c08ab42a2946cdc",
+      "width": 96,
+      "height": 96
+    },
+    "pusht/bwm30/63": {
+      "src": "media/comparison/pusht-bwm30-63.png",
+      "sha256": "dcd753bb26c9c7db9a5e667b349a6b1290da9c7858980beeefc2d7eaf5833560",
+      "width": 96,
+      "height": 96
+    },
+    "can/bwm30/4": {
+      "src": "media/comparison/can-bwm30-4.png",
+      "sha256": "f4c6d33acfdfbc0d997c4f6cfe2dd37b02e07804fb5e17ad61972f1264a09c2f",
+      "width": 96,
+      "height": 96
+    },
+    "can/bwm30/23": {
+      "src": "media/comparison/can-bwm30-23.png",
+      "sha256": "ef70d95d0e282b6aea49d2b8f55d5014f435e0c6ed06e1c3117d1f99525c1034",
+      "width": 96,
+      "height": 96
+    },
+    "can/bwm30/43": {
+      "src": "media/comparison/can-bwm30-43.png",
+      "sha256": "b4c07e309cabbe604f6a228922a04df2541f369433d5ecfd89559f975553c656",
+      "width": 96,
+      "height": 96
+    },
+    "can/bwm30/63": {
+      "src": "media/comparison/can-bwm30-63.png",
+      "sha256": "af3712ee7328b1d78eebf9734282ec6ba81931617bfa1279173369cb336c79e9",
+      "width": 96,
+      "height": 96
+    }
+  },
+  "protocol": "Selected PushT sample2 / Can sample3; same recorded histories, actions, and frame indices. Scratch controls5 epochs; BWM staged spatial5/30 continuations."
+}

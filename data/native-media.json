@@ -2,7 +2,7 @@
   "clips": [
     {
       "title": "Bridge-V2",
-      "model": "Population variant \u00b7 epoch 70",
+      "model": "BWM + population refinement \u00b7 epoch 70",
       "src": "media/bridge-population70-case01.mp4",
       "poster": "media/bridge-population70-case01.jpg",
       "panels": [
@@ -11,11 +11,23 @@
       ],
       "labels_in_media": true,
       "alt": "Selected Bridge-V2 episode: VAE-reconstructed ground truth left and BWM population-drifting epoch70 prediction right",
-      "caption": "Selected example \u00b7 first 16 generated frames \u00b7 8-frame GT-reanchored chunks \u00b7 10 fps replay"
+      "caption": "Selected example \u00b7 first 16 generated frames \u00b7 8-frame GT-reanchored chunks \u00b7 10 fps replay",
+      "examples": [
+        {
+          "case": 1,
+          "src": "media/bridge-population70-case01.mp4",
+          "poster": "media/bridge-population70-case01.jpg"
+        },
+        {
+          "case": 4,
+          "src": "media/bridge-population70-case04.mp4",
+          "poster": "media/bridge-population70-case04.jpg"
+        }
+      ]
     },
     {
       "title": "RT-1",
-      "model": "Population variant \u00b7 epoch 70",
+      "model": "BWM + population refinement \u00b7 epoch 70",
       "src": "media/rt1-population70-case01.mp4",
       "poster": "media/rt1-population70-case01.jpg",
       "panels": [
@@ -24,7 +36,19 @@
       ],
       "labels_in_media": true,
       "alt": "Selected RT-1 episode: VAE-reconstructed ground truth left and BWM population-drifting epoch70 prediction right",
-      "caption": "Selected example \u00b7 first 16 generated frames \u00b7 8-frame GT-reanchored chunks \u00b7 10 fps replay"
+      "caption": "Selected example \u00b7 first 16 generated frames \u00b7 8-frame GT-reanchored chunks \u00b7 10 fps replay",
+      "examples": [
+        {
+          "case": 1,
+          "src": "media/rt1-population70-case01.mp4",
+          "poster": "media/rt1-population70-case01.jpg"
+        },
+        {
+          "case": 4,
+          "src": "media/rt1-population70-case04.mp4",
+          "poster": "media/rt1-population70-case04.jpg"
+        }
+      ]
     }
   ],
   "provenance": "data/native-media-provenance.json"

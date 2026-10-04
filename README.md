@@ -1,11 +1,9 @@
 # Beckmann World Models
 
-Visual project page for Beckmann World Models.
+Academic project page at https://abecid.com/beckmann-world-models/.
 
-https://abecid.github.io/beckmann-world-models/
+The page contains a title and authors, a method figure, selected qualitative results, and quantitative results. Curated predictions retain recorded timing and checkpoint labels. Native evaluation resets recorded context every eight frames and scores VAE-reconstructed references.
 
-Static HTML/CSS/JavaScript, selected saved prediction videos, method diagrams, and benchmark records. RGB and native latent evaluations retain separate protocols and recipe labels.
+Build using python3 scripts/build.py --public. The existing GitHub Actions workflow publishes dist-public.
 
-Build: `python3 scripts/build.py --public`. GitHub Actions publishes `dist-public/` to GitHub Pages.
-
-This site-only repository contains no research code, model checkpoints, training data, or private review manuscript.
+This site repository contains no research code, model checkpoints, training data, or private manuscript. Internal review records are excluded from the public build.

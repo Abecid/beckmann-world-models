@@ -56,7 +56,7 @@ def check(allow_missing_paper=False, public=False):
         if not target.is_file():
             if allow_missing_paper and url.path == 'paper/bwm-paper.pdf': continue
             errors.append(f'Missing file: {ref}')
-    for manifest_name in ('results.json', 'native-media.json', 'rgb-media-provenance.json'):
+    for manifest_name in ('results.json', 'native-media.json', 'rgb-media-provenance.json', 'comparison.json'):
         manifest_path = ROOT / 'data' / manifest_name
         if not manifest_path.is_file():
             errors.append(f'Missing data manifest: {manifest_name}')
@@ -66,6 +66,14 @@ def check(allow_missing_paper=False, public=False):
     for clip in native['clips']:
         for key in ('src', 'poster'):
             if not (ROOT / clip[key]).is_file(): errors.append(f'Missing native asset: {clip[key]}')
+        for example in clip['examples']:
+            for key in ('src', 'poster'):
+                if not (ROOT / example[key]).is_file(): errors.append(f'Missing native example: {example[key]}')
+    comparison = json.loads((ROOT / 'data/comparison.json').read_text())
+    if len(comparison['images']) != 56:
+        errors.append('Comparison must retain all 56 recorded panels')
+    for record in comparison['images'].values():
+        if not (ROOT / record['src']).is_file(): errors.append(f'Missing comparison frame: {record["src"]}')
     for task, samples in {'pusht': [2, 3, 1], 'can': [5, 3, 4]}.items():
         for sample in samples:
             for ext in ('mp4', 'jpg'):
@@ -75,7 +83,7 @@ def check(allow_missing_paper=False, public=False):
         errors.append('Page contains unfinished metric cells')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, and 3 data manifests.')
+    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, and 4 data manifests.')
 
 def main():
     parser = argparse.ArgumentParser()
@@ -93,7 +101,7 @@ def main():
     (dist / 'index.html').write_text(rendered_html(args.public))
     for name in PUBLIC_DIRS:
         if args.public and name == 'paper': continue
-        shutil.copytree(ROOT / name, dist / name)
+        if (ROOT / name).exists(): shutil.copytree(ROOT / name, dist / name)
     if args.public:
         # Retain archived record identities without linking inaccessible private code.
         result_path = dist / 'data' / 'results.json'
@@ -109,6 +117,8 @@ def main():
                     for i in ids for ext in ('mp4', 'jpg'))
         keep.update(f'{task}-population70-case{case}.{ext}'
                     for task in ('bridge', 'rt1') for case in ('01', '04') for ext in ('mp4', 'jpg'))
+        keep.update(record['src'].removeprefix('media/') for record in
+                    json.loads((ROOT / 'data/comparison.json').read_text())['images'].values())
         for path in media_root.rglob('*'):
             if path.is_file() and path.relative_to(media_root).as_posix() not in keep:
                 path.unlink()

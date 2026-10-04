@@ -98,12 +98,41 @@
           "moving_mse": 0.0769,
           "lpips": 0.0682
         }
+      },
+      "gpc": {
+        "pusht": {
+          "mse": 0.063,
+          "moving_mse": 1.4241,
+          "lpips": 0.1609
+        },
+        "can": {
+          "mse": 0.0276,
+          "moving_mse": 0.3103,
+          "lpips": 0.0589
+        }
+      },
+      "avdc": {
+        "pusht": {
+          "mse": 0.0684,
+          "moving_mse": 1.184,
+          "lpips": 0.186
+        },
+        "can": {
+          "mse": 0.04,
+          "moving_mse": 0.2644,
+          "lpips": 0.1194
+        }
       }
     },
     "sources": [
       "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/spatial-20ep-progress.md",
       "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/matched-budget-baselines.md"
-    ]
+    ],
+    "deployment_latency_ms": {
+      "pusht": 24.694225750863552,
+      "can": 25.483950972557068,
+      "scope": "Warmed batch1, A800, generator per native RGB chunk, spatial30"
+    }
   },
   "native": {
     "protocol": {
@@ -131,33 +160,193 @@
     },
     "bwm_spatial_epoch60": {
       "bridge_v2": {
-        "psnr": 25.214,
-        "lpips": 0.126,
-        "fid": 50.92,
-        "fvd": 220.49
+        "psnr": 25.213992491433785,
+        "lpips": 0.12576351758352547,
+        "fid": 50.91848331503246,
+        "fvd": 220.48646198175277,
+        "ssim": 0.8596735516259837,
+        "checkpoint_sha256": "27270d5420d89ab68df01bee060241dbf3b58e8080a8e0f7a44371682c2ccc0f",
+        "nfe_per_frame": 1
       },
       "rt1": {
-        "psnr": 27.585,
-        "lpips": 0.106,
-        "fid": 36.48,
-        "fvd": 250.01
+        "psnr": 27.584534317556052,
+        "lpips": 0.10566940164249955,
+        "fid": 36.47630607263375,
+        "fvd": 250.00588989751762,
+        "ssim": 0.8881114320923583,
+        "checkpoint_sha256": "b8c2a844da1dded85427b7eb383a027fcd75da819b22d5c2d44cb6945b5aed93",
+        "nfe_per_frame": 1
       }
     },
     "bwm_population_drifting_epoch70": {
       "variant": "spatial endpoint map + population drifting, K=8, DINOv3 and latent features",
       "bridge_v2": {
-        "psnr": 25.004,
-        "lpips": 0.111,
-        "fid": 31.86,
-        "fvd": 175.53
+        "psnr": 25.004413751114246,
+        "lpips": 0.1112518243145111,
+        "fid": 31.86404627316699,
+        "fvd": 175.53214103777896,
+        "ssim": 0.8555458806281866,
+        "checkpoint_sha256": "e619a301f3e4283f89072725725c24a0efe16396e936f85568fc06b543600140",
+        "nfe_per_frame": 1
       },
       "rt1": {
-        "psnr": 27.354,
-        "lpips": 0.092,
-        "fid": 19.77,
-        "fvd": 167.5
+        "psnr": 27.35415057943325,
+        "lpips": 0.09168529999677581,
+        "fid": 19.76510219769142,
+        "fvd": 167.5024201765279,
+        "ssim": 0.8840332109518726,
+        "checkpoint_sha256": "23489191c0591ffc28d605c368eefcca56ec09277e4182f7b2ca10c5b3770fbd",
+        "nfe_per_frame": 1
       }
     },
-    "source": "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/native-bridge-rt1-comparison.md"
+    "source": "archived-record:52fc7beea68dda8f2d6d18a65b61b80599dba12f/docs/runs/native-bridge-rt1-comparison.md",
+    "subset_epoch30": {
+      "training_episodes": {
+        "bridge_v2": 2078,
+        "rt1": 2041
+      },
+      "epochs": 30,
+      "exposure": "One deterministic crop per episode per epoch; same SD3/native backbone; objectives, optimizers, batches differ.",
+      "models": {
+        "bwm_spatial": {
+          "bridge_v2": {
+            "ssim": 0.7957429361897845,
+            "psnr": 22.129503866683606,
+            "lpips": 0.15500860241956488,
+            "fid": 68.85596618700862,
+            "fvd2048_16f": 592.2383115449917,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "78d7fa4985a8e8478482ce605f64b6a906280fab7da3ad479b1bb9f1c1e58f98",
+            "n_videos": 215
+          },
+          "rt1": {
+            "ssim": 0.8023329461463774,
+            "psnr": 23.147318136812462,
+            "lpips": 0.1658608928849601,
+            "fid": 75.52500012387736,
+            "fvd2048_16f": 535.5927427288053,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "0de14f325ec9a916d8dcce64f32f88b0c8e574a1467903875860efc3a959bc8d",
+            "n_videos": 198
+          }
+        },
+        "driftworld": {
+          "bridge_v2": {
+            "ssim": 0.8126727234485538,
+            "psnr": 21.918813505838084,
+            "lpips": 0.10421634297384773,
+            "fid": 14.184422152012075,
+            "fvd2048_16f": 188.12551318680826,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "7529c5d81030880bf5b2417ade24eb5c7638ec53a51b472043e40cba1f10ea76",
+            "n_videos": 215
+          },
+          "rt1": {
+            "ssim": 0.8135291223574166,
+            "psnr": 22.41936387919416,
+            "lpips": 0.12946742229314165,
+            "fid": 27.4791497501937,
+            "fvd2048_16f": 237.4510657983242,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "50f1ede125c8529c80fdb13b86e2f0083dd4f52f806f55053cfa7aab5c69d3bc",
+            "n_videos": 198
+          }
+        },
+        "mse": {
+          "bridge_v2": {
+            "ssim": 0.8129062031590661,
+            "psnr": 22.439158124701923,
+            "lpips": 0.16634453013539313,
+            "fid": 61.957790327258294,
+            "fvd2048_16f": 405.607890255058,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "188a247b8700f75da798c1bd7874a474892359f6a6b862668577250af07b7619",
+            "n_videos": 215
+          },
+          "rt1": {
+            "ssim": 0.8154090895797267,
+            "psnr": 23.026390644034954,
+            "lpips": 0.17880975880255603,
+            "fid": 62.40521499844269,
+            "fvd2048_16f": 419.1568545203138,
+            "nfe_per_frame": 1,
+            "checkpoint_sha256": "a893406e43b594733544dce40304d8da0a2475e737c724bd52a1068f1b569ce0",
+            "n_videos": 198
+          }
+        },
+        "gpc": {
+          "bridge_v2": {
+            "ssim": 0.642386192776436,
+            "psnr": 19.932150845194972,
+            "lpips": 0.33498942879743354,
+            "fid": 132.92689692879668,
+            "fvd2048_16f": 756.499365699178,
+            "nfe_per_frame": 3,
+            "checkpoint_sha256": "3b25bc78492f0f9467e5b5e5f6ae659a328d27cb613a801e21038b126d2cb430",
+            "n_videos": 215
+          },
+          "rt1": {
+            "ssim": 0.6938967743907312,
+            "psnr": 20.692013846503365,
+            "lpips": 0.29368249522616163,
+            "fid": 124.18170868539454,
+            "fvd2048_16f": 884.5219073219683,
+            "nfe_per_frame": 3,
+            "checkpoint_sha256": "25004987a5aea46d8daf5dbd844f77a8c7dbe53dec9f06af6a4deb25bbba42f7",
+            "n_videos": 198
+          }
+        },
+        "avdc": {
+          "bridge_v2": {
+            "ssim": 0.7461897991424383,
+            "psnr": 19.59486541748047,
+            "lpips": 0.1589536882070608,
+            "fid": 79.44274991419604,
+            "fvd2048_16f": 657.4637369864912,
+            "nfe_per_frame": 100,
+            "checkpoint_sha256": "9ea7c17bcf0ecbfe25be6112a8983f27f672e12798d5bd9c6d0521400845a07e",
+            "n_videos": 215
+          },
+          "rt1": {
+            "ssim": 0.7493763737606279,
+            "psnr": 20.268801457954176,
+            "lpips": 0.1751079269205079,
+            "fid": 94.86887249401937,
+            "fvd2048_16f": 719.0959240654895,
+            "nfe_per_frame": 100,
+            "checkpoint_sha256": "9c4f27476d490eeb2659d9014734f5868fafc4aeb0de5301113257e7956ae54d",
+            "n_videos": 198
+          }
+        }
+      }
+    },
+    "bridge_full_validation_spatial60": {
+      "ssim": 0.8642056736342681,
+      "psnr": 25.489130418026694,
+      "lpips": 0.12057539239947311,
+      "fid": 38.729278731665715,
+      "fvd2048_16f": 134.52965341105704,
+      "n_videos": 6867,
+      "total_gen_frames": 228616,
+      "fvd_videos": 6572,
+      "checkpoint_sha256": "27270d5420d89ab68df01bee060241dbf3b58e8080a8e0f7a44371682c2ccc0f",
+      "manifest_hash": "220a9dc0a3adfad8dd2daa2d3d5ca8d6a3c6b9de626c881015c017c8030af328",
+      "seed": 314,
+      "gen_chunk": 8,
+      "nfe_per_frame": 1,
+      "cohort": "Separate 6867-episode full-validation cohort; same spatial60 checkpoint; not the 215-episode paired continuation cohort."
+    },
+    "continuation_training": "Subset30 parents continue on full data through spatial60; population70 adds10 epochs. Full-data baselines were not trained at that budget."
+  },
+  "recorded_can_source_convergence": {
+    "source_anchored": {
+      "lpips": 0.0225,
+      "cumulative_training_hours": 2.64
+    },
+    "driftworld": {
+      "lpips": 0.0682,
+      "cumulative_training_hours": 10.19
+    },
+    "scope": "Recorded Can checkpoints; inherited training time included; excludes evaluation waits; source-anchored stage before later motion/spatial continuations."
   }
 }
