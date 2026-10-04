@@ -7,7 +7,7 @@ let playbackRequested = false;
 function updatePlayButton() {
   const playing = heroVideos.some(video => !video.paused);
   playButton.setAttribute('aria-pressed', String(playing));
-  playButton.innerHTML = playing ? '<span aria-hidden="true">Ⅱ</span> Pause examples' : '<span aria-hidden="true">▶</span> Play examples';
+  playButton.innerHTML = playing ? '<span aria-hidden="true"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M5 3v10M11 3v10" stroke-width="3"/></svg></span> Pause examples' : '<span aria-hidden="true">▶</span> Play examples';
 }
 playButton.addEventListener('click', async () => {
   playbackRequested = !heroVideos.some(video => !video.paused);
