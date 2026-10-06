@@ -2,16 +2,16 @@
   "clips": [
     {
       "title": "Bridge-V2",
-      "model": "BWM + population refinement \u00b7 epoch 70",
-      "src": "media/bridge-population70-case04-frames01-05.mp4",
-      "poster": "media/bridge-population70-case04-frames01-05.jpg",
+      "model": "BWM + population refinement",
+      "src": "media/bridge-population-case042-frames017-044.mp4",
+      "poster": "media/bridge-population-case042-frames017-044.jpg",
       "panels": [
         "Ground truth (VAE)",
         "BWM + population drifting"
       ],
       "labels_in_media": true,
-      "alt": "Selected Bridge-V2 case 04, generated frames 1\u20135: VAE-reconstructed ground truth left and BWM population-refinement epoch 70 prediction right",
-      "caption": "Selected example \u00b7 generated frames 1\u20135 \u00b7 initial recorded context \u00b7 10 fps replay",
+      "alt": "Selected Bridge-V2 interaction, consecutive generated frames 17 through 44: VAE ground truth and BWM population refinement, recorded context refreshed every eight frames.",
+      "caption": "Selected interaction \u00b7 generated frames 17\u201344 \u00b7 10 fps replay \u00b7 recorded context refreshes every eight frames",
       "examples": [
         {
           "case": 1,
@@ -25,24 +25,24 @@
         }
       ],
       "displayed_frame_range": [
-        1,
-        5
+        17,
+        44
       ],
-      "crosses_context_reset": false,
-      "candidate_index": 4
+      "crosses_context_reset": true,
+      "candidate_pool_index": 42
     },
     {
       "title": "RT-1",
-      "model": "BWM + population refinement \u00b7 epoch 70",
-      "src": "media/rt1-population70-case04-frames01-05.mp4",
-      "poster": "media/rt1-population70-case04-frames01-05.jpg",
+      "model": "BWM + population refinement",
+      "src": "media/rt1-population-case010-frames017-089.mp4",
+      "poster": "media/rt1-population-case010-frames017-089.jpg",
       "panels": [
         "Ground truth (VAE)",
         "BWM + population drifting"
       ],
       "labels_in_media": true,
-      "alt": "Selected RT-1 case 04, generated frames 1\u20135: VAE-reconstructed ground truth left and BWM population-refinement epoch 70 prediction right",
-      "caption": "Selected example \u00b7 generated frames 1\u20135 \u00b7 initial recorded context \u00b7 10 fps replay",
+      "alt": "Selected RT-1 interaction, consecutive generated frames 17 through 89: VAE ground truth and BWM population refinement, recorded context refreshed every eight frames.",
+      "caption": "Selected interaction \u00b7 generated frames 17\u201389 \u00b7 10 fps replay \u00b7 recorded context refreshes every eight frames",
       "examples": [
         {
           "case": 1,
@@ -56,11 +56,11 @@
         }
       ],
       "displayed_frame_range": [
-        1,
-        5
+        17,
+        89
       ],
-      "crosses_context_reset": false,
-      "candidate_index": 4
+      "crosses_context_reset": true,
+      "candidate_pool_index": 10
     }
   ],
   "provenance": "data/native-media-provenance.json"
