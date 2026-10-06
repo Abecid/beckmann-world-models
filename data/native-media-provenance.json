@@ -70,5 +70,57 @@
     "transforms": "label bar added; original whole frames, no enhancement/crop/interpolation",
     "file_sha256": "27251163ce6f759a30d73d15053f082c35ee0c7376b2990dfdf2c007b2e4373e",
     "poster_sha256": "87385ae06c269fe3856b807e85e724a1afaf10896c61ffdd39b30bbb0bb7408e"
+  },
+  {
+    "task": "bridge",
+    "file": "bridge-population70-case04-frames01-05.mp4",
+    "poster": "bridge-population70-case04-frames01-05.jpg",
+    "candidate_index": 4,
+    "episode_id": "bridge_dataset-val.tfrecord-00057-of-00128::0",
+    "stem": "bridge_dataset-val.tfrecord-00057-of-00128__0",
+    "lpips_episode": 0.046958308666944504,
+    "checkpoint": "ours_drift_full epoch70",
+    "frames": "generated frames 1\u20135 inclusive, in recorded order",
+    "reference": "VAE-reconstructed GT",
+    "protocol": "four GT context frames; eight-frame autoregressive chunks re-anchored on GT",
+    "playback_fps": 10,
+    "selection": "Reviewed saved 12-case task shortlist visually; early case04 segment chosen for coherent gripper/object interaction before later visible degradation",
+    "transforms": "MP4 stream-copy of the first five contiguous frames. Decoded RGB pixels equal the original clip prefix. No crop, interpolation, enhancement or frame splicing.",
+    "file_sha256": "df4c164e8f662f07d39fdca725222d2c86b4cd6499bef9fc20899327bc3abb48",
+    "poster_sha256": "89f23dba3e358cfbd6729647afd6bc5acc06b13b69e472b1c525fb3a9549f398",
+    "displayed_frame_range": [
+      1,
+      5
+    ],
+    "crosses_context_reset": false,
+    "duration_seconds": 0.5,
+    "source_file": "bridge-population70-case04.mp4",
+    "source_file_sha256": "4e4f621b792202a9691f1078ffc4f6fc316edc81244e231b6edec8cd9c896194"
+  },
+  {
+    "task": "rt1",
+    "file": "rt1-population70-case04-frames01-05.mp4",
+    "poster": "rt1-population70-case04-frames01-05.jpg",
+    "candidate_index": 4,
+    "episode_id": "fractal20220817_data-train.tfrecord-00826-of-01024::67",
+    "stem": "fractal20220817_data-train.tfrecord-00826-of-01024__67",
+    "lpips_episode": 0.03197551146149635,
+    "checkpoint": "ours_drift_full epoch70",
+    "frames": "generated frames 1\u20135 inclusive, in recorded order",
+    "reference": "VAE-reconstructed GT",
+    "protocol": "four GT context frames; eight-frame autoregressive chunks re-anchored on GT",
+    "playback_fps": 10,
+    "selection": "Reviewed saved 12-case task shortlist visually; early case04 segment chosen for coherent gripper/object interaction before later visible degradation",
+    "transforms": "MP4 stream-copy of the first five contiguous frames. Decoded RGB pixels equal the original clip prefix. No crop, interpolation, enhancement or frame splicing.",
+    "file_sha256": "472f3992120191c448a89972b544f2d5450863147a1242f86ce44b5b6048da9f",
+    "poster_sha256": "51dad01dce14764b4688152af63f5fb9e67264415953de1c0a76e09af70d5230",
+    "displayed_frame_range": [
+      1,
+      5
+    ],
+    "crosses_context_reset": false,
+    "duration_seconds": 0.5,
+    "source_file": "rt1-population70-case04.mp4",
+    "source_file_sha256": "27251163ce6f759a30d73d15053f082c35ee0c7376b2990dfdf2c007b2e4373e"
   }
 ]

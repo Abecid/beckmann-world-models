@@ -1,9 +1,28 @@
 "use strict";
-const videos=[...document.querySelectorAll("video")];
-const button=document.getElementById("play-examples");
-function update(){const playing=videos.some(v=>!v.paused);button.textContent=playing?"Pause examples":"Play examples";button.setAttribute("aria-pressed",String(playing));}
-button.addEventListener("click",async()=>{if(videos.some(v=>!v.paused))videos.forEach(v=>v.pause());else{videos.forEach(v=>v.currentTime=0);await Promise.allSettled(videos.map(v=>v.play()));}update();});
-videos.forEach(v=>{v.addEventListener("play",update);v.addEventListener("pause",update);});
-function pause(){videos.forEach(v=>v.pause());update();}
-document.addEventListener("visibilitychange",()=>{if(document.hidden)pause();});
-window.matchMedia("(prefers-reduced-motion: reduce)").addEventListener("change",e=>{if(e.matches)pause();});
+const videos = [...document.querySelectorAll("video")];
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function pauseVideos() {
+  videos.forEach(video => video.pause());
+}
+
+function playVideos() {
+  if (document.hidden || reducedMotion.matches) return;
+  videos.forEach(video => {
+    video.muted = true;
+    const playback = video.play();
+    if (playback) playback.catch(() => { video.controls = true; });
+  });
+}
+
+if (reducedMotion.matches) pauseVideos();
+else playVideos();
+
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) pauseVideos();
+  else playVideos();
+});
+reducedMotion.addEventListener("change", () => {
+  if (reducedMotion.matches) pauseVideos();
+  else playVideos();
+});

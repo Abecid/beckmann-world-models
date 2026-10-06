@@ -117,6 +117,9 @@ def main():
                     for i in ids for ext in ('mp4', 'jpg'))
         keep.update(f'{task}-population70-case{case}.{ext}'
                     for task in ('bridge', 'rt1') for case in ('01', '04') for ext in ('mp4', 'jpg'))
+        keep.update(clip[key].removeprefix('media/')
+                    for clip in json.loads((ROOT / 'data' / 'native-media.json').read_text())['clips']
+                    for key in ('src', 'poster'))
         keep.update(record['src'].removeprefix('media/') for record in
                     json.loads((ROOT / 'data/comparison.json').read_text())['images'].values())
         for path in media_root.rglob('*'):
