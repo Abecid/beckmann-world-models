@@ -37,7 +37,7 @@
       "recipe": "5 epochs"
     },
     "bwm5": {
-      "label": "BWM spatial",
+      "label": "BWM + spatial",
       "recipe": "Spatial stage \u00b7 5 epochs"
     },
     "bwm30": {
@@ -383,5 +383,13 @@
       "height": 96
     }
   },
-  "protocol": "Selected PushT sample2 / Can sample3; same recorded histories, actions, and frame indices. Scratch controls5 epochs; BWM staged spatial5/30 continuations."
+  "protocol": "Selected PushT sample2 / Can sample3; same recorded histories, actions, and frame indices. Scratch controls5 epochs; BWM staged spatial5/30 continuations.",
+  "display_models": [
+    "gt",
+    "driftworld",
+    "mse",
+    "gpc",
+    "avdc",
+    "bwm5"
+  ]
 }

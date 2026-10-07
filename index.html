@@ -23,8 +23,94 @@
 <section id="qualitative"><div class="section-heading"><h2>Qualitative results</h2></div>
 <div class="video-grid"><figure class="video-card"><h3>PushT<small>Spatial feature supervision</small></h3><div class="panel-labels"><span>Recorded frames</span><span>BWM</span></div><video autoplay muted loop playsinline controls preload="auto" poster="media/pusht-30ep-2.jpg" src="media/pusht-30ep-2.mp4" aria-label="Selected PushT example with matched reference and BWM prediction"></video></figure><figure class="video-card"><h3>Robomimic Can<small>Spatial feature supervision</small></h3><div class="panel-labels"><span>Recorded frames</span><span>BWM</span></div><video autoplay muted loop playsinline controls preload="auto" poster="media/can-30ep-3.jpg" src="media/can-30ep-3.mp4" aria-label="Selected Robomimic Can example with matched reference and BWM prediction"></video></figure><figure class="video-card" id="native-qualitative"><h3>Bridge-V2<small>Recovery features · 500 updates</small></h3><video autoplay muted loop playsinline controls preload="auto" poster="media/bridge-recovery500-sink-poster.png" src="media/bridge-recovery500-sink.mp4" aria-label="Selected Bridge-V2 interaction, reference and BWM with recovery feature supervision, 50 consecutive predictions in eight-frame chunks."></video></figure><figure class="video-card"><h3>RT-1<small>Recovery features · 1,000 updates</small></h3><video autoplay muted loop playsinline controls preload="auto" poster="media/rt1-recovery1000-drawer-poster.png" src="media/rt1-recovery1000-drawer.mp4" aria-label="Selected RT-1 interaction, reference and BWM with recovery feature supervision, 97 consecutive predictions in eight-frame chunks."></video></figure></div>
 <p class="caption">Selected examples from the evaluated models. RGB: four observed and 60 predicted frames. Native: eight-frame autoregressive chunks, each starting from four recorded frames; VAE-reconstructed references.</p>
-<figure class="comparison-figure"><img src="figures/rgb-comparison-grid.png" alt="Matched PushT and Can predictions across ground truth, DriftWorld, regression, GPC, AVDC, and BWM with spatial supervision, at initial and extended fits" loading="lazy">
-</figure></section>
+<div class="comparison-figure" id="rgb-comparison">
+<div class="comparison-task" tabindex="0" role="region" aria-label="PushT frame comparison"><table class="frame-comparison"><caption>PushT</caption><colgroup><col class="model-label"><col span="4"></colgroup><thead><tr><th scope="col"><span class="visually-hidden">Model</span></th>
+<th scope="col"><i>t</i> = 4</th>
+<th scope="col"><i>t</i> = 23</th>
+<th scope="col"><i>t</i> = 43</th>
+<th scope="col"><i>t</i> = 63</th>
+</tr></thead><tbody>
+<tr data-model="gt"><th scope="row">Ground truth</th>
+<td><img src="media/comparison/pusht-gt-4.png" alt="PushT, Ground truth, frame 4" width="131" height="130" loading="lazy" data-comparison-key="pusht/gt/4"></td>
+<td><img src="media/comparison/pusht-gt-23.png" alt="PushT, Ground truth, frame 23" width="131" height="130" loading="lazy" data-comparison-key="pusht/gt/23"></td>
+<td><img src="media/comparison/pusht-gt-43.png" alt="PushT, Ground truth, frame 43" width="131" height="130" loading="lazy" data-comparison-key="pusht/gt/43"></td>
+<td><img src="media/comparison/pusht-gt-63.png" alt="PushT, Ground truth, frame 63" width="131" height="130" loading="lazy" data-comparison-key="pusht/gt/63"></td>
+</tr>
+<tr data-model="driftworld"><th scope="row">DriftWorld</th>
+<td><img src="media/comparison/pusht-driftworld-4.png" alt="PushT, DriftWorld, frame 4" width="131" height="130" loading="lazy" data-comparison-key="pusht/driftworld/4"></td>
+<td><img src="media/comparison/pusht-driftworld-23.png" alt="PushT, DriftWorld, frame 23" width="131" height="130" loading="lazy" data-comparison-key="pusht/driftworld/23"></td>
+<td><img src="media/comparison/pusht-driftworld-43.png" alt="PushT, DriftWorld, frame 43" width="131" height="130" loading="lazy" data-comparison-key="pusht/driftworld/43"></td>
+<td><img src="media/comparison/pusht-driftworld-63.png" alt="PushT, DriftWorld, frame 63" width="131" height="130" loading="lazy" data-comparison-key="pusht/driftworld/63"></td>
+</tr>
+<tr data-model="mse"><th scope="row">MSE U-Net</th>
+<td><img src="media/comparison/pusht-mse-4.png" alt="PushT, MSE U-Net, frame 4" width="131" height="131" loading="lazy" data-comparison-key="pusht/mse/4"></td>
+<td><img src="media/comparison/pusht-mse-23.png" alt="PushT, MSE U-Net, frame 23" width="131" height="131" loading="lazy" data-comparison-key="pusht/mse/23"></td>
+<td><img src="media/comparison/pusht-mse-43.png" alt="PushT, MSE U-Net, frame 43" width="131" height="131" loading="lazy" data-comparison-key="pusht/mse/43"></td>
+<td><img src="media/comparison/pusht-mse-63.png" alt="PushT, MSE U-Net, frame 63" width="131" height="131" loading="lazy" data-comparison-key="pusht/mse/63"></td>
+</tr>
+<tr data-model="gpc"><th scope="row">GPC</th>
+<td><img src="media/comparison/pusht-gpc-4.png" alt="PushT, GPC, frame 4" width="131" height="131" loading="lazy" data-comparison-key="pusht/gpc/4"></td>
+<td><img src="media/comparison/pusht-gpc-23.png" alt="PushT, GPC, frame 23" width="131" height="131" loading="lazy" data-comparison-key="pusht/gpc/23"></td>
+<td><img src="media/comparison/pusht-gpc-43.png" alt="PushT, GPC, frame 43" width="131" height="131" loading="lazy" data-comparison-key="pusht/gpc/43"></td>
+<td><img src="media/comparison/pusht-gpc-63.png" alt="PushT, GPC, frame 63" width="131" height="131" loading="lazy" data-comparison-key="pusht/gpc/63"></td>
+</tr>
+<tr data-model="avdc"><th scope="row">AVDC</th>
+<td><img src="media/comparison/pusht-avdc-4.png" alt="PushT, AVDC, frame 4" width="131" height="131" loading="lazy" data-comparison-key="pusht/avdc/4"></td>
+<td><img src="media/comparison/pusht-avdc-23.png" alt="PushT, AVDC, frame 23" width="131" height="131" loading="lazy" data-comparison-key="pusht/avdc/23"></td>
+<td><img src="media/comparison/pusht-avdc-43.png" alt="PushT, AVDC, frame 43" width="131" height="131" loading="lazy" data-comparison-key="pusht/avdc/43"></td>
+<td><img src="media/comparison/pusht-avdc-63.png" alt="PushT, AVDC, frame 63" width="131" height="131" loading="lazy" data-comparison-key="pusht/avdc/63"></td>
+</tr>
+<tr data-model="bwm5"><th scope="row">BWM + spatial</th>
+<td><img src="media/comparison/pusht-bwm5-4.png" alt="PushT, BWM + spatial, frame 4" width="131" height="131" loading="lazy" data-comparison-key="pusht/bwm5/4"></td>
+<td><img src="media/comparison/pusht-bwm5-23.png" alt="PushT, BWM + spatial, frame 23" width="131" height="131" loading="lazy" data-comparison-key="pusht/bwm5/23"></td>
+<td><img src="media/comparison/pusht-bwm5-43.png" alt="PushT, BWM + spatial, frame 43" width="131" height="131" loading="lazy" data-comparison-key="pusht/bwm5/43"></td>
+<td><img src="media/comparison/pusht-bwm5-63.png" alt="PushT, BWM + spatial, frame 63" width="131" height="131" loading="lazy" data-comparison-key="pusht/bwm5/63"></td>
+</tr>
+</tbody></table></div>
+<div class="comparison-task" tabindex="0" role="region" aria-label="Robomimic Can frame comparison"><table class="frame-comparison"><caption>Robomimic Can</caption><colgroup><col class="model-label"><col span="4"></colgroup><thead><tr><th scope="col"><span class="visually-hidden">Model</span></th>
+<th scope="col"><i>t</i> = 4</th>
+<th scope="col"><i>t</i> = 23</th>
+<th scope="col"><i>t</i> = 43</th>
+<th scope="col"><i>t</i> = 63</th>
+</tr></thead><tbody>
+<tr data-model="gt"><th scope="row">Ground truth</th>
+<td><img src="media/comparison/can-gt-4.png" alt="Robomimic Can, Ground truth, frame 4" width="130" height="130" loading="lazy" data-comparison-key="can/gt/4"></td>
+<td><img src="media/comparison/can-gt-23.png" alt="Robomimic Can, Ground truth, frame 23" width="130" height="130" loading="lazy" data-comparison-key="can/gt/23"></td>
+<td><img src="media/comparison/can-gt-43.png" alt="Robomimic Can, Ground truth, frame 43" width="130" height="130" loading="lazy" data-comparison-key="can/gt/43"></td>
+<td><img src="media/comparison/can-gt-63.png" alt="Robomimic Can, Ground truth, frame 63" width="131" height="130" loading="lazy" data-comparison-key="can/gt/63"></td>
+</tr>
+<tr data-model="driftworld"><th scope="row">DriftWorld</th>
+<td><img src="media/comparison/can-driftworld-4.png" alt="Robomimic Can, DriftWorld, frame 4" width="130" height="130" loading="lazy" data-comparison-key="can/driftworld/4"></td>
+<td><img src="media/comparison/can-driftworld-23.png" alt="Robomimic Can, DriftWorld, frame 23" width="130" height="130" loading="lazy" data-comparison-key="can/driftworld/23"></td>
+<td><img src="media/comparison/can-driftworld-43.png" alt="Robomimic Can, DriftWorld, frame 43" width="130" height="130" loading="lazy" data-comparison-key="can/driftworld/43"></td>
+<td><img src="media/comparison/can-driftworld-63.png" alt="Robomimic Can, DriftWorld, frame 63" width="131" height="130" loading="lazy" data-comparison-key="can/driftworld/63"></td>
+</tr>
+<tr data-model="mse"><th scope="row">MSE U-Net</th>
+<td><img src="media/comparison/can-mse-4.png" alt="Robomimic Can, MSE U-Net, frame 4" width="130" height="131" loading="lazy" data-comparison-key="can/mse/4"></td>
+<td><img src="media/comparison/can-mse-23.png" alt="Robomimic Can, MSE U-Net, frame 23" width="130" height="131" loading="lazy" data-comparison-key="can/mse/23"></td>
+<td><img src="media/comparison/can-mse-43.png" alt="Robomimic Can, MSE U-Net, frame 43" width="130" height="131" loading="lazy" data-comparison-key="can/mse/43"></td>
+<td><img src="media/comparison/can-mse-63.png" alt="Robomimic Can, MSE U-Net, frame 63" width="131" height="131" loading="lazy" data-comparison-key="can/mse/63"></td>
+</tr>
+<tr data-model="gpc"><th scope="row">GPC</th>
+<td><img src="media/comparison/can-gpc-4.png" alt="Robomimic Can, GPC, frame 4" width="130" height="131" loading="lazy" data-comparison-key="can/gpc/4"></td>
+<td><img src="media/comparison/can-gpc-23.png" alt="Robomimic Can, GPC, frame 23" width="130" height="131" loading="lazy" data-comparison-key="can/gpc/23"></td>
+<td><img src="media/comparison/can-gpc-43.png" alt="Robomimic Can, GPC, frame 43" width="130" height="131" loading="lazy" data-comparison-key="can/gpc/43"></td>
+<td><img src="media/comparison/can-gpc-63.png" alt="Robomimic Can, GPC, frame 63" width="131" height="131" loading="lazy" data-comparison-key="can/gpc/63"></td>
+</tr>
+<tr data-model="avdc"><th scope="row">AVDC</th>
+<td><img src="media/comparison/can-avdc-4.png" alt="Robomimic Can, AVDC, frame 4" width="130" height="131" loading="lazy" data-comparison-key="can/avdc/4"></td>
+<td><img src="media/comparison/can-avdc-23.png" alt="Robomimic Can, AVDC, frame 23" width="130" height="131" loading="lazy" data-comparison-key="can/avdc/23"></td>
+<td><img src="media/comparison/can-avdc-43.png" alt="Robomimic Can, AVDC, frame 43" width="130" height="131" loading="lazy" data-comparison-key="can/avdc/43"></td>
+<td><img src="media/comparison/can-avdc-63.png" alt="Robomimic Can, AVDC, frame 63" width="131" height="131" loading="lazy" data-comparison-key="can/avdc/63"></td>
+</tr>
+<tr data-model="bwm5"><th scope="row">BWM + spatial</th>
+<td><img src="media/comparison/can-bwm5-4.png" alt="Robomimic Can, BWM + spatial, frame 4" width="130" height="131" loading="lazy" data-comparison-key="can/bwm5/4"></td>
+<td><img src="media/comparison/can-bwm5-23.png" alt="Robomimic Can, BWM + spatial, frame 23" width="130" height="131" loading="lazy" data-comparison-key="can/bwm5/23"></td>
+<td><img src="media/comparison/can-bwm5-43.png" alt="Robomimic Can, BWM + spatial, frame 43" width="130" height="131" loading="lazy" data-comparison-key="can/bwm5/43"></td>
+<td><img src="media/comparison/can-bwm5-63.png" alt="Robomimic Can, BWM + spatial, frame 63" width="131" height="131" loading="lazy" data-comparison-key="can/bwm5/63"></td>
+</tr>
+</tbody></table></div>
+</div></section>
 <section id="quantitative"><h2>Quantitative results</h2><h3>RGB prediction</h3>
 <div class="table-scroll" tabindex="0" role="region" aria-label="RGB prediction results"><table class="rgb-table"><thead><tr><th rowspan="2" scope="col">Model</th><th colspan="3" scope="colgroup">PushT</th><th colspan="3" scope="colgroup">Robomimic Can</th></tr><tr><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th><th scope="col">MSE ↓</th><th scope="col">Motion MSE ↓</th><th scope="col">LPIPS ↓</th></tr></thead><tbody><tr><th scope="row">MSE U-Net </th><td>0.0303</td><td>0.4008</td><td>0.0804</td><td>0.0051</td><td>0.0544</td><td>0.0104</td></tr><tr><th scope="row">DriftWorld </th><td>0.0314</td><td>0.4093</td><td>0.0790</td><td>0.0104</td><td>0.0769</td><td>0.0682</td></tr><tr><th scope="row">GPC </th><td>0.0630</td><td>1.4241</td><td>0.1609</td><td>0.0276</td><td>0.3103</td><td>0.0589</td></tr><tr><th scope="row">AVDC </th><td>0.0684</td><td>1.1840</td><td>0.1860</td><td>0.0400</td><td>0.2644</td><td>0.1194</td></tr><tr class="ours"><th scope="row">BWM + spatial </th><td><strong>0.0098</strong></td><td><strong>0.1247</strong></td><td><strong>0.0280</strong></td><td><strong>0.0022</strong></td><td><strong>0.0242</strong></td><td><strong>0.0056</strong></td></tr></tbody></table></div>
 <p class="caption">388 PushT and 30 Can episodes. Four observed and 60 autoregressive predictions at 96 × 96 resolution.</p>

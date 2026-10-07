@@ -19,6 +19,7 @@ class References(HTMLParser):
         self.refs, self.ids, self.errors = [], set(), []
         self.metric_rows, self.metric_row, self.metric_cell = {}, None, None
         self.metric_text = []
+        self.comparison_images = {}
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'tr' and (attrs.get('data-native-result') or attrs.get('data-policy-result')):
@@ -29,6 +30,11 @@ class References(HTMLParser):
         if tag == 'td' and self.metric_row and attrs.get('data-metric'):
             self.metric_cell = attrs['data-metric']
             self.metric_text = []
+        if tag == 'img' and attrs.get('data-comparison-key'):
+            key = attrs['data-comparison-key']
+            if key in self.comparison_images:
+                self.errors.append(f'Duplicate comparison panel: {key}')
+            self.comparison_images[key] = attrs.get('src')
         if 'id' in attrs:
             if attrs['id'] in self.ids:
                 self.errors.append(f"Duplicate id: {attrs['id']}")
@@ -131,8 +137,20 @@ def check(allow_missing_paper=False, public=False):
     comparison = json.loads((ROOT / 'data/comparison.json').read_text())
     if len(comparison['images']) != 56:
         errors.append('Comparison must retain all 56 recorded panels')
+    if comparison['display_models'] != ['gt', 'driftworld', 'mse', 'gpc', 'avdc', 'bwm5']:
+        errors.append('Comparison must display the six requested model rows')
+    expected_panels = {
+        f'{task}/{model}/{frame}': comparison['images'][f'{task}/{model}/{frame}']['src']
+        for task in comparison['tasks']
+        for model in comparison['display_models']
+        for frame in comparison['frames']
+    }
+    if document.comparison_images != expected_panels:
+        errors.append('Displayed comparison panels differ from the source record')
     for record in comparison['images'].values():
-        if not (ROOT / record['src']).is_file(): errors.append(f'Missing comparison frame: {record["src"]}')
+        asset = ROOT / record['src']
+        if not asset.is_file() or hashlib.sha256(asset.read_bytes()).hexdigest() != record['sha256']:
+            errors.append(f'Comparison frame identity mismatch: {record["src"]}')
     for task, samples in {'pusht': [2, 3, 1], 'can': [5, 3, 4]}.items():
         for sample in samples:
             for ext in ('mp4', 'jpg'):
@@ -142,7 +160,7 @@ def check(allow_missing_paper=False, public=False):
         errors.append('Page contains unfinished metric cells')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, 6 data manifests, 15 full-data metric cells, and 12 policy/planning metric cells.')
+    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 archived and 48 displayed comparison panels, 6 data manifests, 15 full-data metric cells, and 12 policy/planning metric cells.')
 
 def main():
     parser = argparse.ArgumentParser()
