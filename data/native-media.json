@@ -2,66 +2,44 @@
   "clips": [
     {
       "title": "Bridge-V2",
-      "model": "BWM + population refinement",
-      "src": "media/bridge-population-case042-frames017-044.mp4",
-      "poster": "media/bridge-population-case042-frames017-044.jpg",
+      "model": "BWM + recovery features",
+      "src": "media/bridge-recovery500-sink.mp4",
+      "poster": "media/bridge-recovery500-sink-poster.png",
       "panels": [
-        "Ground truth (VAE)",
-        "BWM + population drifting"
+        "Reference",
+        "BWM"
       ],
       "labels_in_media": true,
-      "alt": "Selected Bridge-V2 interaction, consecutive generated frames 17 through 44: VAE ground truth and BWM population refinement, recorded context refreshed every eight frames.",
-      "caption": "Selected interaction \u00b7 generated frames 17\u201344 \u00b7 10 fps replay \u00b7 recorded context refreshes every eight frames",
-      "examples": [
-        {
-          "case": 1,
-          "src": "media/bridge-population70-case01.mp4",
-          "poster": "media/bridge-population70-case01.jpg"
-        },
-        {
-          "case": 4,
-          "src": "media/bridge-population70-case04.mp4",
-          "poster": "media/bridge-population70-case04.jpg"
-        }
-      ],
+      "alt": "Selected Bridge-V2 interaction, reference and BWM with recovery feature supervision, 50 consecutive predictions in eight-frame chunks.",
+      "caption": "Selected interaction \u00b7 50 consecutive predictions \u00b7 5 fps",
+      "examples": [],
       "displayed_frame_range": [
-        17,
-        44
+        4,
+        53
       ],
-      "crosses_context_reset": true,
-      "candidate_pool_index": 42
+      "checkpoint_sha256": "4faca077fe5b62146595c818bc30d7caf488b14ec45c5c76b881d2fdb4c57926",
+      "added_updates": 500
     },
     {
       "title": "RT-1",
-      "model": "BWM + population refinement",
-      "src": "media/rt1-population-case010-frames017-089.mp4",
-      "poster": "media/rt1-population-case010-frames017-089.jpg",
+      "model": "BWM + recovery features",
+      "src": "media/rt1-recovery1000-drawer.mp4",
+      "poster": "media/rt1-recovery1000-drawer-poster.png",
       "panels": [
-        "Ground truth (VAE)",
-        "BWM + population drifting"
+        "Reference",
+        "BWM"
       ],
       "labels_in_media": true,
-      "alt": "Selected RT-1 interaction, consecutive generated frames 17 through 89: VAE ground truth and BWM population refinement, recorded context refreshed every eight frames.",
-      "caption": "Selected interaction \u00b7 generated frames 17\u201389 \u00b7 10 fps replay \u00b7 recorded context refreshes every eight frames",
-      "examples": [
-        {
-          "case": 1,
-          "src": "media/rt1-population70-case01.mp4",
-          "poster": "media/rt1-population70-case01.jpg"
-        },
-        {
-          "case": 4,
-          "src": "media/rt1-population70-case04.mp4",
-          "poster": "media/rt1-population70-case04.jpg"
-        }
-      ],
+      "alt": "Selected RT-1 interaction, reference and BWM with recovery feature supervision, 97 consecutive predictions in eight-frame chunks.",
+      "caption": "Selected interaction \u00b7 97 consecutive predictions \u00b7 3 fps",
+      "examples": [],
       "displayed_frame_range": [
-        17,
-        89
+        4,
+        100
       ],
-      "crosses_context_reset": true,
-      "candidate_pool_index": 10
+      "checkpoint_sha256": "6ae2f491af9c5732c9ef9a651b1fff11f601a637f4d55f575a36b67fb3732a42",
+      "added_updates": 1000
     }
   ],
-  "provenance": "data/native-media-provenance.json"
+  "provenance": "data/native-recovery-media-20261007.json"
 }

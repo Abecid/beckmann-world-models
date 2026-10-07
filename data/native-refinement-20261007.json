@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-07",
+  "verification_scope": "Completed official evaluations; source identities and paired episode coverage verified, per-episode scalar aggregates reproduced. FID/FVD are verified retained aggregate results, not independently recomputed.",
+  "source_audit_utc": {
+    "bridge_v2": "2026-10-07T11:41:02Z",
+    "rt1": "2026-10-07T16:34:31Z"
+  },
+  "comparison_scope": "Within-dataset full-data parent and matched continuations; separate from the matched-subset baseline table.",
+  "protocol": {
+    "split": "validation",
+    "seed": 314,
+    "representation": "SD3 latents",
+    "image_size": [
+      256,
+      256
+    ],
+    "recorded_context_frames": 4,
+    "autoregressive_frames_per_window": 8,
+    "conditioning": "Each eight-frame autoregressive window starts from four recorded frames. Windows cover the eligible full episodes.",
+    "reference": "VAE-reconstructed recorded frames",
+    "ssim_psnr_lpips_aggregation": "Per-episode mean, then unweighted mean across episodes",
+    "fid_aggregation": "All generated frames versus corresponding reference frames",
+    "fvd": "StyleGAN-V fvd2048_16f, first 16 generated frames of each eligible episode, mirrored evaluation",
+    "ema": true,
+    "source_scale": 1.35,
+    "cfg": 1.0,
+    "generator_calls_per_frame": 1,
+    "tf32": false,
+    "metrics": {
+      "ssim": {
+        "direction": "higher"
+      },
+      "psnr": {
+        "direction": "higher",
+        "unit": "dB"
+      },
+      "lpips": {
+        "direction": "lower"
+      },
+      "fid": {
+        "direction": "lower"
+      },
+      "fvd": {
+        "direction": "lower"
+      }
+    }
+  },
+  "datasets": {
+    "bridge_v2": {
+      "label": "Bridge-V2",
+      "training_episodes": 52969,
+      "training_scope": "Full-data continuation of the existing epoch-70 model.",
+      "selected_added_updates": 500,
+      "runs": {
+        "parent": {
+          "label": "Parent (epoch 70)",
+          "added_updates": 0,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.8555458806281866,
+            "psnr": 25.004413751114246,
+            "lpips": 0.1112518243145111,
+            "fid": 31.86404627316699,
+            "fvd": 175.53214103777896
+          },
+          "counts": {
+            "validation_episodes": 215,
+            "predicted_frames": 7079,
+            "fvd_eligible_episodes": 201,
+            "network_calls_including_padding": 7864,
+            "padded_tail_calls": 785
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "e619a301f3e4283f89072725725c24a0efe16396e936f85568fc06b543600140",
+          "source_aggregate_sha256": "46c0f017756a0871a0202ac6a32e7ecb52f46aa10aa46c77f615809e5c42fe2a",
+          "manifest_sha256": "220a9dc0a3adfad8dd2daa2d3d5ca8d6a3c6b9de626c881015c017c8030af328",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.0
+        },
+        "control": {
+          "label": "Matched continuation",
+          "added_updates": 500,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.8555647536765697,
+            "psnr": 25.00693791411644,
+            "lpips": 0.11061800051220627,
+            "fid": 30.98281666808532,
+            "fvd": 171.5617065303329
+          },
+          "counts": {
+            "validation_episodes": 215,
+            "predicted_frames": 7079,
+            "fvd_eligible_episodes": 201,
+            "network_calls_including_padding": 7864,
+            "padded_tail_calls": 785
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "218fa94325e2b551528ba0e00eb562721e97093e1d146cb1fa108345dc4d34af",
+          "source_aggregate_sha256": "9e6043d27495ce9ad33a7abf973221c660ac3b9a9796c6533019a224bf92e828",
+          "manifest_sha256": "220a9dc0a3adfad8dd2daa2d3d5ca8d6a3c6b9de626c881015c017c8030af328",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.0
+        },
+        "recovery": {
+          "label": "Selected refinement",
+          "added_updates": 500,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.8579606460970501,
+            "psnr": 24.94979849970618,
+            "lpips": 0.08409909463032733,
+            "fid": 21.340606177237703,
+            "fvd": 117.1980590279903
+          },
+          "counts": {
+            "validation_episodes": 215,
+            "predicted_frames": 7079,
+            "fvd_eligible_episodes": 201,
+            "network_calls_including_padding": 7864,
+            "padded_tail_calls": 785
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "4faca077fe5b62146595c818bc30d7caf488b14ec45c5c76b881d2fdb4c57926",
+          "source_aggregate_sha256": "7dc159bf518170fefe8b9911ebf26f7a923d9e3719215b844b9687ba15393401",
+          "manifest_sha256": "220a9dc0a3adfad8dd2daa2d3d5ca8d6a3c6b9de626c881015c017c8030af328",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.01
+        }
+      }
+    },
+    "rt1": {
+      "label": "RT-1",
+      "training_episodes": 86634,
+      "training_scope": "Full-data continuation of the existing epoch-70 model.",
+      "selected_added_updates": 1000,
+      "runs": {
+        "parent": {
+          "label": "Parent (epoch 70)",
+          "added_updates": 0,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.8840332109518726,
+            "psnr": 27.35415057943325,
+            "lpips": 0.09168529999677581,
+            "fid": 19.76510219769142,
+            "fvd": 167.5024201765279
+          },
+          "counts": {
+            "validation_episodes": 198,
+            "predicted_frames": 8409,
+            "fvd_eligible_episodes": 193,
+            "network_calls_including_padding": 9088,
+            "padded_tail_calls": 679
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "23489191c0591ffc28d605c368eefcca56ec09277e4182f7b2ca10c5b3770fbd",
+          "source_aggregate_sha256": "a98acad946c26f686ed09b9cb27256737fce930187a74d89ac3d3a3ac1c9240f",
+          "manifest_sha256": "fa7219115f10b544786ddc4521c3e8a5b9a48602cfee1aa13441d3d0289d6536",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.0
+        },
+        "control": {
+          "label": "Matched continuation",
+          "added_updates": 1000,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.8836073932623623,
+            "psnr": 27.341142355793654,
+            "lpips": 0.0933250289861903,
+            "fid": 20.563227630712845,
+            "fvd": 172.89054194461198
+          },
+          "counts": {
+            "validation_episodes": 198,
+            "predicted_frames": 8409,
+            "fvd_eligible_episodes": 193,
+            "network_calls_including_padding": 9088,
+            "padded_tail_calls": 679
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "9013920b201c77da535c4fe3c3c2fa820dce5ffa8b8e75a305c0e6123f6ccaf8",
+          "source_aggregate_sha256": "3084cad4722b0f4c351635666d3952d99d7a5ddb70856773593a463db57b609f",
+          "manifest_sha256": "fa7219115f10b544786ddc4521c3e8a5b9a48602cfee1aa13441d3d0289d6536",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.0
+        },
+        "recovery": {
+          "label": "Selected refinement",
+          "added_updates": 1000,
+          "parent_epoch": 70,
+          "metrics": {
+            "ssim": 0.886088867681195,
+            "psnr": 27.270725510337137,
+            "lpips": 0.06115638386608675,
+            "fid": 8.045119682081463,
+            "fvd": 104.90630306984387
+          },
+          "counts": {
+            "validation_episodes": 198,
+            "predicted_frames": 8409,
+            "fvd_eligible_episodes": 193,
+            "network_calls_including_padding": 9088,
+            "padded_tail_calls": 679
+          },
+          "nfe_per_frame": 1,
+          "checkpoint_sha256": "6ae2f491af9c5732c9ef9a651b1fff11f601a637f4d55f575a36b67fb3732a42",
+          "source_aggregate_sha256": "354751d109f1f5adee46b10e399a083bc3fff861acf35a20318d88fa80c18b6c",
+          "manifest_sha256": "fa7219115f10b544786ddc4521c3e8a5b9a48602cfee1aa13441d3d0289d6536",
+          "fvd_detector_sha256": "bec6519f66ea534e953026b4ae2c65553c17bf105611c746d904657e5860a5e2",
+          "recovery_feature_coefficient": 0.01
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Checkpoint selection used development episodes overlapping this validation cohort; these are repeated validation results, not an independent test set.",
+    "One training seed per recipe; no training-seed replication or training-seed uncertainty estimate.",
+    "Perceptual metrics improve with a small PSNR decrease; sharper predictions do not establish correct contact or object motion.",
+    "Full-data training counts and continuation budgets differ from the existing matched-subset baseline experiment.",
+    "The reported windows are eight-frame autoregressive predictions, not uninterrupted whole-episode open-loop forecasts."
+  ],
+  "refinement": {
+    "training_change": "Add native DINO and latent feature drifting to the existing detached recovery endpoints.",
+    "recovery_feature_coefficient": 0.01,
+    "inference_unchanged": true,
+    "comparison_budget": "Equal added optimizer updates within each dataset; not equal training compute.",
+    "continuation_initialization": "Both arms start from the same epoch-70 EMA with explicit fresh optimizers and 100-update warmup."
+  }
+}

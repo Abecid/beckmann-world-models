@@ -336,7 +336,12 @@
       "nfe_per_frame": 1,
       "cohort": "Separate 6867-episode full-validation cohort; same spatial60 checkpoint; not the 215-episode paired continuation cohort."
     },
-    "continuation_training": "Subset30 parents continue on full data through spatial60; population70 adds10 epochs. Full-data baselines were not trained at that budget."
+    "continuation_training": "Subset30 parents continue on full data through spatial60; population70 adds10 epochs. Full-data baselines were not trained at that budget.",
+    "refinement_update": {
+      "verified_at": "2026-10-07",
+      "record": "data/native-refinement-20261007.json",
+      "scope": "Separate full-data parent and matched-continuation results; original subset comparison preserved."
+    }
   },
   "recorded_can_source_convergence": {
     "source_anchored": {

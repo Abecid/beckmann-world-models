@@ -1,0 +1,564 @@
+{
+  "dataset": "bridge",
+  "episode_id": "bridge_dataset-val.tfrecord-00040-of-00128::8",
+  "checkpoint_sha256": "4faca077fe5b62146595c818bc30d7caf488b14ec45c5c76b881d2fdb4c57926",
+  "step": 500,
+  "manifest_hash": "220a9dc0a3adfad8dd2daa2d3d5ca8d6a3c6b9de626c881015c017c8030af328",
+  "official_metadata_sha256": {
+    "aggregate_summary.json": "7dc159bf518170fefe8b9911ebf26f7a923d9e3719215b844b9687ba15393401",
+    "shards/metrics_rank0_of2.json": "5d3f95fcbed0b086d558025626706940ca19829573ce09c90396256c889c91d8",
+    "shards/metrics_rank1_of2.json": "9bbab9b6c2a3f1eed6ae102c02019e8f66d1603ac5d6910f499299617d6cf2fb"
+  },
+  "frames": [
+    {
+      "absolute_target": 4,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0000.png",
+        "sha256": "427f5e8629c56a13c064a9177b3b771c0eb32a31400c89bbbbf95dc1fb14dbb1"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0000.png",
+        "sha256": "82889e796d17306c70b327f1b3d0910d1f245d0bfc152afc237a22ba6051b99b"
+      }
+    },
+    {
+      "absolute_target": 5,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0001.png",
+        "sha256": "f3a3c4c7aafea45a22eb9ab9be92356bcdd6113a6ff4c14a1a7efcd370354506"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0001.png",
+        "sha256": "61c61075907a90bcde75a9b9067a3a45400e919a9bc174981185e207ab8f949b"
+      }
+    },
+    {
+      "absolute_target": 6,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0002.png",
+        "sha256": "ad04bf077f8548225b6171c03c595d8624ac12c33567276cfff5e801fc15eead"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0002.png",
+        "sha256": "b12c892fdb523bcbacd83bd7870088ac268b02f24c3849cdee0afc6a674947a5"
+      }
+    },
+    {
+      "absolute_target": 7,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0003.png",
+        "sha256": "735423daf1d8036535e2e7dec9828b957c614cbaee9692601f73c2dd51111366"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0003.png",
+        "sha256": "693e31ab7e8b45381b116933afe91538048edb15234d7877b0aba4d9c91799fa"
+      }
+    },
+    {
+      "absolute_target": 8,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0004.png",
+        "sha256": "63a6f9307c3b0d2d00215e874b919a6337092d05c45abaa17253546a36bb4496"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0004.png",
+        "sha256": "49893ef9cd998f7d2adbe6167fcb0edcab8192862cf9578aeb6d834cba9aac03"
+      }
+    },
+    {
+      "absolute_target": 9,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0005.png",
+        "sha256": "130e4f670346728f00496d219ca9e089eac9e0e2133776b2435757dc78557abc"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0005.png",
+        "sha256": "c9d141b9402bb77492d17e9a8bf4ac3339bceffe96af260fc6d7cc0588f05120"
+      }
+    },
+    {
+      "absolute_target": 10,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0006.png",
+        "sha256": "9ef06bf42c1edfc41d70e45da5560a58932a33dafa5940dda684c6f8ffb2f2ee"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0006.png",
+        "sha256": "c6fe3bbd1cd1bc8cf1c316ec21ec6a0d21d313bea250300365c8f4476e3f2196"
+      }
+    },
+    {
+      "absolute_target": 11,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0007.png",
+        "sha256": "52ca03cae4f3fa9d128c90346f4d877fa635c8a9232a7f73f884cac7846d2b42"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0007.png",
+        "sha256": "6f9f184cd9807d4f831295b3fd3d32102be35af331e66d8fad0fa87cb94e6233"
+      }
+    },
+    {
+      "absolute_target": 12,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0008.png",
+        "sha256": "2e4d5b9afd8ee2712b7cc8c84275b82212c26b08c45f5d47bf5c76ef738f3bca"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0008.png",
+        "sha256": "341fb37aca4047b432df11819e8056437324c0c01502731e2cf1d01fca9caf19"
+      }
+    },
+    {
+      "absolute_target": 13,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0009.png",
+        "sha256": "1f261456be253cc9d1c7384b65e9d724d1b076448257aeba63580d795c061567"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0009.png",
+        "sha256": "c0c8126ba00e4f16fb5e05c68ee120b1213f6dabc7098b6341af7dba55f415ed"
+      }
+    },
+    {
+      "absolute_target": 14,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0010.png",
+        "sha256": "5a59635e68bbd25d886aaa5453a3bc636346f16cac09cd8520f66615f4dcb543"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0010.png",
+        "sha256": "61e54181f682578d95a3a68a36c296ca2cd597e42c1b3d6d5fdd99901cc2de55"
+      }
+    },
+    {
+      "absolute_target": 15,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0011.png",
+        "sha256": "daf54d8ac3655b606aed482ea2b535f0e786dfb0ecb8dca2b2148f34694128e7"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0011.png",
+        "sha256": "f9bea488f1b1bf975ac5b731cf567d3301efb192676dfb7003f4588dce547b0c"
+      }
+    },
+    {
+      "absolute_target": 16,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0012.png",
+        "sha256": "a00ccfd47a70b4fd096f063b7b876057a9d29cc56ac9b70b38c7d1848b7088ca"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0012.png",
+        "sha256": "a95964b3c003bc843cb2e16cea9d71d7457565d88d4d2231ed9966f1509b80bd"
+      }
+    },
+    {
+      "absolute_target": 17,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0013.png",
+        "sha256": "9219a3b2faab678205d61e5164422caf36f8879ecd84c2518d49937e106fc9f6"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0013.png",
+        "sha256": "d1160c34d2ef2d6d11ac650b5ecc65d943d7b253cf764f79991127b9f6050570"
+      }
+    },
+    {
+      "absolute_target": 18,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0014.png",
+        "sha256": "f0b498fb4c18b5e8dc72b6e3e3c43f5a02069975c0251bfb4c8e2a8dfcb290b5"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0014.png",
+        "sha256": "691c365b047355a72f2e70dbd356439ea7f10ca618ad244ededf9650f1b2114c"
+      }
+    },
+    {
+      "absolute_target": 19,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0015.png",
+        "sha256": "ee6acb8074568dccfe7acf521a2c47e0aaa379fe7299d6134b0c6f125afe32eb"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0015.png",
+        "sha256": "fc07ad5d842b4b624702cfab28f45bf6577308406767bc56a5307f8591f2f820"
+      }
+    },
+    {
+      "absolute_target": 20,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0016.png",
+        "sha256": "9366e3e51311fcce177ef4d1fdd3f1a07c3101d8125de22eecafb83d6a66363a"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0016.png",
+        "sha256": "db5e552470301f6d503e6b547f71a3d8f02cd1ba722e1001dea5bbfe19c1d6cc"
+      }
+    },
+    {
+      "absolute_target": 21,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0017.png",
+        "sha256": "9b5b5773320db0eb43c8eec77cc4c84c5a95ac69231ce84bbf7aa83bc6b9c1dc"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0017.png",
+        "sha256": "b46dcb04db06ea4119daea8634a4afa042d501e4da46f8611afd2b2dc14032e7"
+      }
+    },
+    {
+      "absolute_target": 22,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0018.png",
+        "sha256": "a524c1e56adc94c2f6efd3b3028c814b473eb01e5460e9b073cee186c52d26cd"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0018.png",
+        "sha256": "f4e6ce61356944338a9c8c4ef766a293c477719b0ca3483910fabddda4be52fe"
+      }
+    },
+    {
+      "absolute_target": 23,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0019.png",
+        "sha256": "28f131beec812fcb82864e274e70d9b834b176df18deca45f677d3b332143d4b"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0019.png",
+        "sha256": "ae1d7602a8774083580e5e1c1284a80fa941e3ca73ac06bfeeab701a707ff8a3"
+      }
+    },
+    {
+      "absolute_target": 24,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0020.png",
+        "sha256": "239af37a8d7702c9b28c54a0e692482a551e5fa0c128121189349f5ea4da1f39"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0020.png",
+        "sha256": "f46e14a241750330feb62a80bed727bf9b9a0133923f02898e40c4188e188350"
+      }
+    },
+    {
+      "absolute_target": 25,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0021.png",
+        "sha256": "ce01e8ec149d520b37a546e31dbba58e2d1e175c864d2ad43cd0c6a612dd73d1"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0021.png",
+        "sha256": "2cc64f42a637eecb44367d72c4d98f12e1e13084ffda673861e4b8bb380d9a50"
+      }
+    },
+    {
+      "absolute_target": 26,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0022.png",
+        "sha256": "1899ff7b4f4cf1375f86c9239c3c4e51954c71f27deb2083155e542e1fcee1b9"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0022.png",
+        "sha256": "486cf278a34f096828e294b8a48bd4bc1a01d06a187a370dc98afe3b345477a8"
+      }
+    },
+    {
+      "absolute_target": 27,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0023.png",
+        "sha256": "053ab8dadc41f0d4d3d23fcebdebe8a3aa0e74300aec7f5ad4e4accf0cd38f39"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0023.png",
+        "sha256": "9fd15f19fb4ba4ab9e8acc97fc29fcc12a816b752af0c3d29ad4e3753d73393b"
+      }
+    },
+    {
+      "absolute_target": 28,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0024.png",
+        "sha256": "eacfce95bd394afc6def2401721f6f739412840c22524843d19255565a3b20d6"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0024.png",
+        "sha256": "821ef19063047eab5bdd6af5bf641238bcad831435366441729c0190a5e30a79"
+      }
+    },
+    {
+      "absolute_target": 29,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0025.png",
+        "sha256": "bd6fda47140249cefcd58e315eb3651e132d791c3adf21b285aee99cf7d43e75"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0025.png",
+        "sha256": "0bb8c48710ad58847ad5c0a1da1c3dca68f42bf5806a8237748d0fcd7f62d833"
+      }
+    },
+    {
+      "absolute_target": 30,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0026.png",
+        "sha256": "899931525129f7fb1b39c4102f54cab1d8d425112dd7d0db0b06878512d82e92"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0026.png",
+        "sha256": "51c5d714a2dc3d5364b3808a1955bdcf893c4a11c4cd81e8f025b51e4968bc0d"
+      }
+    },
+    {
+      "absolute_target": 31,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0027.png",
+        "sha256": "f8ea4868c59204d676307f828dfac1b7bd60c1cebc5a7eda6f9a9f7ab15b7ef2"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0027.png",
+        "sha256": "a532dc0bcb6f4bd2713e2728909a6190f740d3823191e8fdafcaa3c1b7852c5d"
+      }
+    },
+    {
+      "absolute_target": 32,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0028.png",
+        "sha256": "ea77e81ccf062284101f2a2100f58cb13a2994a545e3b47aebe1b59239f81938"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0028.png",
+        "sha256": "2fe400cbadac1aced862c892b7da2c90bd1d11071c9ac67fb15c192c181dbe9d"
+      }
+    },
+    {
+      "absolute_target": 33,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0029.png",
+        "sha256": "384ffb3d97e8f95682b079f2ba2128b497f3bc461bf033b63517845a7e131998"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0029.png",
+        "sha256": "54c02a2eb0c1ec20461842afb1350d119610bb3ef6a7724365edfb1a3731407e"
+      }
+    },
+    {
+      "absolute_target": 34,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0030.png",
+        "sha256": "d8d38cd582812dc58618de38ffd7cf09540348a1663c482a4be89b43a9bb9865"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0030.png",
+        "sha256": "c4f0708bf99bb65fe0bdd753cf23f30eb6a5ea531ae7dc608700cb0378f063d9"
+      }
+    },
+    {
+      "absolute_target": 35,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0031.png",
+        "sha256": "5f3f92bea438ecfeca8abc71299bc4a1ef1d375d90e423ee5cc35d15b7668602"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0031.png",
+        "sha256": "92377ad6008ce6420b962a23c930b4241093ca61507630540f16bf1da100a695"
+      }
+    },
+    {
+      "absolute_target": 36,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0032.png",
+        "sha256": "b354733ad98aa212fde6f9955cb6e5141dae5bd473fb7a679d580417deae8a56"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0032.png",
+        "sha256": "a181d88bf088dd1480dd160f6556929f02b7bb8795ec5579167d9840d4390d4f"
+      }
+    },
+    {
+      "absolute_target": 37,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0033.png",
+        "sha256": "f6be324fc7cc5284866683d81c9a27a87c76abd46651d43e10cdcbfcfcaebd44"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0033.png",
+        "sha256": "30253bc35b37833914fa2e5ec37daf542ae46637bfa71663a86b45b31aaa20c6"
+      }
+    },
+    {
+      "absolute_target": 38,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0034.png",
+        "sha256": "6781196391ddf243b45a49943b7d082b2f37d372ad0321c33e08adcf421e26d1"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0034.png",
+        "sha256": "66d96dc18d723ec5d469cb481e0df4c05c28ef39922aebf1ca4d2bba458a8e25"
+      }
+    },
+    {
+      "absolute_target": 39,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0035.png",
+        "sha256": "62b4a3de5389a506aae01e33905534c6d6eb7eb10309a7c79daa821ede9422f9"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0035.png",
+        "sha256": "1f8bf9c496eb1c89492b16684c308edb22d5f19fac51a341a82b7ffc067d82fa"
+      }
+    },
+    {
+      "absolute_target": 40,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0036.png",
+        "sha256": "d6ea08014d20aeb21b0899c67f20791bbfa5e403964aa9ae6bcc1d92bf4358f9"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0036.png",
+        "sha256": "8314b8823a34d403076771999d9bfa3961be24d7448f3a9e424b66f389787013"
+      }
+    },
+    {
+      "absolute_target": 41,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0037.png",
+        "sha256": "79bacdf6c4f172ca2abd91343456bd8334bf8efcd993650aa73d8a0bbd0953d6"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0037.png",
+        "sha256": "6500db2047f93e7c25170de87dccef49ac35105ed2a1eb53a3a6d2caf9b4a39f"
+      }
+    },
+    {
+      "absolute_target": 42,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0038.png",
+        "sha256": "235961a61885b803e22469f8a03c9657c539790c88525bece0ef6e92d5e42b8e"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0038.png",
+        "sha256": "909de1f186339a3b3cdc7eac245965f3d7fed1f9e28e64158fade9fe3b8d3ce0"
+      }
+    },
+    {
+      "absolute_target": 43,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0039.png",
+        "sha256": "dbe3b0551db18b80dfc861d07cadcb690d7af1df541d939fdfd244a14b41fb06"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0039.png",
+        "sha256": "e33d6b990689e3a2d25d7cfde4cabe19cf66dd59316e6a241f74482efa6ec014"
+      }
+    },
+    {
+      "absolute_target": 44,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0040.png",
+        "sha256": "cbeff038f06821fdc523b3e509e46cb2d83554a9cac4bd56ab9d9ddebdc42264"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0040.png",
+        "sha256": "532b51f177af2d332cdd943a3712da27f0c6336e35903cb6390a93c7dd676016"
+      }
+    },
+    {
+      "absolute_target": 45,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0041.png",
+        "sha256": "a927fac17825cd200757c86cbea05bdd7ef35bee8c2d9594b6ba5a29fbd33a87"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0041.png",
+        "sha256": "fd4ef557e004ff2a5c88a1371d632e9b6e1374d974ac910b4671bc28aad3893c"
+      }
+    },
+    {
+      "absolute_target": 46,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0042.png",
+        "sha256": "fb3a53566065139b77313eeba13dff8bf2ef4c97d6104bda0d7befdbc4093560"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0042.png",
+        "sha256": "fb4c8585e38ebfc684d452025784bab42d1ab38c336641a134b5e623b7696422"
+      }
+    },
+    {
+      "absolute_target": 47,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0043.png",
+        "sha256": "bfb65b520ef178158818cbcf2dbf7652e7e9ae8bf2336ff607cd573cd6aa207f"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0043.png",
+        "sha256": "dc3ee5dd3864b9d86eea5aec17c09e7bcbccb1e7db795bd0d0b6f1c5c3b85cd8"
+      }
+    },
+    {
+      "absolute_target": 48,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0044.png",
+        "sha256": "012b87d25142de387a1380f66fe5026e3a4f5f271aa699886394f19830f69a16"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0044.png",
+        "sha256": "e115db518e0f0e1d5c97c0fcac4f710ec25a91df9ad05d31433a69dd1f66f19a"
+      }
+    },
+    {
+      "absolute_target": 49,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0045.png",
+        "sha256": "05aaa2f7f689de2aa8e08493754e764642f4ceb3db57ec048c182e0ff589f893"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0045.png",
+        "sha256": "4bd47c1a9907141855199a9bdc8bcfc17612f4a29579d073263a47128ead0f53"
+      }
+    },
+    {
+      "absolute_target": 50,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0046.png",
+        "sha256": "92e04acd8486fc696e85fb4d74ed85b245e81313bf5a3d2ee4d1a962b8b7704f"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0046.png",
+        "sha256": "d8ecfd43def1538aefdb8708df9795fd20e3df351e782cfd8e54cde4dce815ca"
+      }
+    },
+    {
+      "absolute_target": 51,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0047.png",
+        "sha256": "01052b9018baafff0269a2297da13b81eaad7b8af7e3697ceeb8169079178a7e"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0047.png",
+        "sha256": "0b55bff0e2e9c2c66ce8bccf81b2fff481a1f81243b475d8187928acf72cd510"
+      }
+    },
+    {
+      "absolute_target": 52,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0048.png",
+        "sha256": "2cbe290bc7478c58c11befdb4f8f7861f5bff26f7b16da0bc6ffc12889252dfa"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0048.png",
+        "sha256": "e2687869fe9b30a7f80c3e67a8f870660ad40ce52bec7b19fa50f74d85f19b46"
+      }
+    },
+    {
+      "absolute_target": 53,
+      "reference": {
+        "file": "gt_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0049.png",
+        "sha256": "f3cb779915a7d3c2f53fce5b69c324d67407b81dcb1477dcbe10e398fd1923e3"
+      },
+      "bwm": {
+        "file": "pred_frames/bridge_dataset-val.tfrecord-00040-of-00128__8_f0049.png",
+        "sha256": "5581bda08cdc87fb4ca95eb5139c0412bd388b3ab82f1965124882897f317724"
+      }
+    }
+  ]
+}

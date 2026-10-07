@@ -1,0 +1,111 @@
+{
+  "format": "bwm_blog_official_media_v1",
+  "created_utc": "2026-10-07T18:36:44.975648+00:00",
+  "builder_sha256": "2767e5eca07ecdc3b79455a3aa4cc1f9140ed0994662f509675be8d8502abc34",
+  "clips": [
+    {
+      "dataset": "bridge",
+      "episode_id": "bridge_dataset-val.tfrecord-00040-of-00128::8",
+      "checkpoint_sha256": "4faca077fe5b62146595c818bc30d7caf488b14ec45c5c76b881d2fdb4c57926",
+      "step": 500,
+      "sequence": "Full consecutive saved official evaluation predictions",
+      "first_absolute_target": 4,
+      "last_absolute_target": 53,
+      "frames": 50,
+      "fps": 5,
+      "dimensions": [
+        512,
+        288
+      ],
+      "columns": [
+        "Reference",
+        "BWM"
+      ],
+      "native_image_dimensions": [
+        256,
+        256
+      ],
+      "source_manifest": {
+        "file": "data/bridge-recovery500-sink-sources.json",
+        "sha256": "5d68acc48dabb7fa5cb562b7d14850e5f8f081d2ffcdc886dedc3f52f4decec1"
+      },
+      "video": {
+        "file": "media/bridge-recovery500-sink.mp4",
+        "sha256": "4c7ef05651ea7cf880b60d240688f23945730d81431d50956ea3c87ed34e2948"
+      },
+      "poster": {
+        "file": "media/bridge-recovery500-sink-poster.png",
+        "sha256": "0ff9c57fb25ad43b3c48dc5570f2132c1312fed9c19c699f4e8fb70da12133e0",
+        "absolute_target": 38
+      },
+      "pixel_processing": "Direct original PNG pixel copies; no resizing, blending, averaging, enhancement or frame interpolation. PNG posters are lossless; MP4 H264 yuv420p CRF16 is a lossy viewing derivative.",
+      "verification": {
+        "decoded_frames": 50,
+        "decoded_dimensions": [
+          512,
+          288
+        ],
+        "fps": "5/1",
+        "full_decode_passed": true
+      },
+      "protocol": {
+        "autoregressive_frames_per_chunk": 8,
+        "recorded_frames_per_chunk": 4,
+        "reference": "VAE-reconstructed recorded frames",
+        "calls_per_frame": 1
+      }
+    },
+    {
+      "dataset": "rt1",
+      "episode_id": "fractal20220817_data-train.tfrecord-00634-of-01024::48",
+      "checkpoint_sha256": "6ae2f491af9c5732c9ef9a651b1fff11f601a637f4d55f575a36b67fb3732a42",
+      "step": 1000,
+      "sequence": "Full consecutive saved official evaluation predictions",
+      "first_absolute_target": 4,
+      "last_absolute_target": 100,
+      "frames": 97,
+      "fps": 3,
+      "dimensions": [
+        512,
+        288
+      ],
+      "columns": [
+        "Reference",
+        "BWM"
+      ],
+      "native_image_dimensions": [
+        256,
+        256
+      ],
+      "source_manifest": {
+        "file": "data/rt1-recovery1000-drawer-sources.json",
+        "sha256": "530fb09171cc467f81eeef29caa867a755e7ecf82d424fafb234fb56ccd950b4"
+      },
+      "video": {
+        "file": "media/rt1-recovery1000-drawer.mp4",
+        "sha256": "d889974115369923659f24defeda8f94bfca522d40c3a9bfa9962a68e1145e28"
+      },
+      "poster": {
+        "file": "media/rt1-recovery1000-drawer-poster.png",
+        "sha256": "624e30d8a802da9805d9fae123bff8d0a80d49f31de309b74846d5a3d5e8d4bc",
+        "absolute_target": 66
+      },
+      "pixel_processing": "Direct original PNG pixel copies; no resizing, blending, averaging, enhancement or frame interpolation. PNG posters are lossless; MP4 H264 yuv420p CRF16 is a lossy viewing derivative.",
+      "verification": {
+        "decoded_frames": 97,
+        "decoded_dimensions": [
+          512,
+          288
+        ],
+        "fps": "3/1",
+        "full_decode_passed": true
+      },
+      "protocol": {
+        "autoregressive_frames_per_chunk": 8,
+        "recorded_frames_per_chunk": 4,
+        "reference": "VAE-reconstructed recorded frames",
+        "calls_per_frame": 1
+      }
+    }
+  ]
+}
