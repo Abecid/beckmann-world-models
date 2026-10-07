@@ -21,8 +21,8 @@ class References(HTMLParser):
         self.metric_text = []
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
-        if tag == 'tr' and attrs.get('data-native-result'):
-            self.metric_row = attrs['data-native-result']
+        if tag == 'tr' and (attrs.get('data-native-result') or attrs.get('data-policy-result')):
+            self.metric_row = attrs.get('data-native-result') or f'policy:{attrs["data-policy-result"]}'
             if self.metric_row in self.metric_rows:
                 self.errors.append(f'Duplicate metric row: {self.metric_row}')
             self.metric_rows[self.metric_row] = {}
@@ -80,7 +80,7 @@ def check(allow_missing_paper=False, public=False):
         if not target.is_file():
             if allow_missing_paper and url.path == 'paper/bwm-paper.pdf': continue
             errors.append(f'Missing file: {ref}')
-    for manifest_name in ('results.json', 'native-media.json', 'rgb-media-provenance.json', 'comparison.json', 'native-refinement-20261007.json'):
+    for manifest_name in ('results.json', 'native-media.json', 'rgb-media-provenance.json', 'comparison.json', 'native-refinement-20261007.json', 'pusht-policy-results.json'):
         manifest_path = ROOT / 'data' / manifest_name
         if not manifest_path.is_file():
             errors.append(f'Missing data manifest: {manifest_name}')
@@ -96,8 +96,19 @@ def check(allow_missing_paper=False, public=False):
                 metric: f'{run["metrics"][metric]:.{precision}f}'
                 for metric, precision in {'ssim': 3, 'psnr': 3, 'lpips': 3, 'fid': 2, 'fvd': 2}.items()
             }
+    policy = json.loads((ROOT / 'data/pusht-policy-results.json').read_text())
+    if set(policy['runs']) != {'driftworld', 'mse', 'gpc', 'bwm_spatial30'}:
+        errors.append('Policy record must retain all four reported models')
+    for model, run in policy['runs'].items():
+        expected_rows[f'policy:{model}'] = {
+            metric: f'{run["metrics"][metric]:.3f}'
+            for metric in ('planning_iou', 'policy_r', 'policy_mae')
+        }
+    results = json.loads((ROOT / 'data/results.json').read_text())
+    if policy['runs']['bwm_spatial30']['checkpoint_sha256'] != results['rgb']['bwm_spatial_epoch30']['pusht']['checkpoint_sha256']:
+        errors.append('Policy results must identify the displayed RGB checkpoint')
     if document.metric_rows != expected_rows:
-        errors.append('Displayed full-data metrics do not match the verified evaluation record')
+        errors.append('Displayed native or policy metrics do not match the evaluation records')
     native = json.loads((ROOT / 'data/native-media.json').read_text())
     for clip in native['clips']:
         for key in ('src', 'poster'):
@@ -131,7 +142,7 @@ def check(allow_missing_paper=False, public=False):
         errors.append('Page contains unfinished metric cells')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, 5 data manifests, 15 full-data metric cells.')
+    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, 6 data manifests, 15 full-data metric cells, and 12 policy/planning metric cells.')
 
 def main():
     parser = argparse.ArgumentParser()

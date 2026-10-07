@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "restored_at": "2026-10-07",
+  "dataset": "PushT",
+  "scope": "Previously completed RGB policy and planning evaluations, separate from the Bridge-V2/RT-1 refinement experiments.",
+  "source_commit": "408925184f2bcfa5cfa9765b6ed0d378135dc726",
+  "precision": "Values retain the published precision in the archived source tables, not unrounded raw trial statistics.",
+  "protocol": {
+    "planning": {
+      "method": "GPC-RANK",
+      "fixed_evaluation_seeds": 50,
+      "metric": "Mean achieved intersection-over-union (IoU)",
+      "comparison": "Paired evaluation against local 5-epoch DriftWorld"
+    },
+    "policy_evaluation": {
+      "frozen_policy_checkpoints": [
+        50,
+        100,
+        150,
+        200,
+        250,
+        300,
+        650
+      ],
+      "paired_trials_per_policy": 300,
+      "base_seed": 100000,
+      "correlation": "Pearson correlation of mean world-model IoU with mean simulator IoU across seven policies",
+      "mae": "Mean absolute difference of world-model and simulator IoU across seven policies"
+    }
+  },
+  "runs": {
+    "driftworld": {
+      "label": "DriftWorld",
+      "recipe_epoch": 5,
+      "metrics": {
+        "planning_iou": 0.709,
+        "policy_r": 0.8565,
+        "policy_mae": 0.0306
+      },
+      "sources": [
+        "matched-budget-baselines",
+        "policy-evaluation-correlation"
+      ]
+    },
+    "mse": {
+      "label": "MSE U-Net",
+      "recipe_epoch": 5,
+      "metrics": {
+        "planning_iou": 0.695,
+        "policy_r": 0.915,
+        "policy_mae": 0.0121
+      },
+      "sources": [
+        "matched-budget-baselines",
+        "policy-evaluation-correlation"
+      ]
+    },
+    "gpc": {
+      "label": "GPC diffusion",
+      "recipe_epoch": 5,
+      "metrics": {
+        "planning_iou": 0.615,
+        "policy_r": 0.3659,
+        "policy_mae": 0.5127
+      },
+      "sources": [
+        "matched-budget-baselines",
+        "policy-evaluation-correlation"
+      ]
+    },
+    "bwm_spatial30": {
+      "label": "BWM + spatial",
+      "recipe_epoch": 30,
+      "metrics": {
+        "planning_iou": 0.721,
+        "policy_r": 0.928,
+        "policy_mae": 0.01
+      },
+      "sources": [
+        "spatial-20ep-progress"
+      ],
+      "checkpoint_sha256": "e943b236e45228426bef4c9f25974d8de22bd61fa2745b6ddc7fb72783d287a3"
+    }
+  },
+  "planning_paired_difference": {
+    "model": "bwm_spatial30",
+    "reference": "driftworld",
+    "mean": 0.012,
+    "bootstrap_95_ci": [
+      -0.047,
+      0.071
+    ],
+    "interpretation": "The interval includes zero; this does not establish improved planning."
+  },
+  "sources": {
+    "spatial-20ep-progress": {
+      "record": "docs/runs/spatial-20ep-progress.md",
+      "sha256": "99dac54bf8fb6d9f419f1f5d589aae775ed9a77790d22179535de1904fa8c154"
+    },
+    "matched-budget-baselines": {
+      "record": "docs/runs/matched-budget-baselines.md",
+      "sha256": "331b4e06ca6f5683e3539f0697243c28362a04395ce082376bcb3b688e8004bf"
+    },
+    "policy-evaluation-correlation": {
+      "record": "docs/runs/policy-evaluation-correlation.md",
+      "sha256": "472696c90da2da34eb946d2604c6bbf4934ada8ca0d3d96a4be5abd764de159b"
+    }
+  },
+  "limitations": [
+    "BWM spatial epoch30 includes inherited training; baseline models are 5-epoch fits from scratch. This is not an equal-training-budget comparison.",
+    "Intervals describe evaluation variability, not variation across training seeds.",
+    "Policy IoU error is not a robot success rate.",
+    "These results do not establish policy performance for Bridge-V2, RT-1 or Robomimic Can."
+  ]
+}
