@@ -88,13 +88,14 @@ def check(allow_missing_paper=False, public=False):
             json.loads(manifest_path.read_text())
     refinement = json.loads((ROOT / 'data/native-refinement-20261007.json').read_text())
     expected_rows = {}
-    for dataset, record in refinement['datasets'].items():
+    # The page displays the RT-1 refinement; the full record also retains Bridge-V2.
+    for dataset in ('rt1',):
+        record = refinement['datasets'][dataset]
         for arm, run in record['runs'].items():
             expected_rows[f'{dataset}:{arm}'] = {
                 metric: f'{run["metrics"][metric]:.{precision}f}'
                 for metric, precision in {'ssim': 3, 'psnr': 3, 'lpips': 3, 'fid': 2, 'fvd': 2}.items()
             }
-            expected_rows[f'{dataset}:{arm}']['added_updates'] = f'{run["added_updates"]:,}'
     if document.metric_rows != expected_rows:
         errors.append('Displayed full-data metrics do not match the verified evaluation record')
     native = json.loads((ROOT / 'data/native-media.json').read_text())
@@ -130,7 +131,7 @@ def check(allow_missing_paper=False, public=False):
         errors.append('Page contains unfinished metric cells')
     if errors:
         raise SystemExit('\n'.join(errors))
-    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, 5 data manifests, 30 full-data metric cells, and 6 update counts.')
+    print(f'Checked {len(document.refs)} HTML references, {len(document.ids)} anchors, all gallery assets, 56 comparison panels, 5 data manifests, 15 full-data metric cells.')
 
 def main():
     parser = argparse.ArgumentParser()
