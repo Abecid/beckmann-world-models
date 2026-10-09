@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-09",
+  "figures": {
+    "endpoint-training.png": {
+      "kind": "Schematic training illustration using real rollout crops",
+      "source": "Existing Google Slides thread, post 4; approved unchanged"
+    },
+    "native-matched-results.svg": {
+      "kind": "Measured validation results",
+      "source": "data/native-refinement-20261007.json",
+      "comparison": "same parent checkpoint; matched added updates, not matched compute"
+    },
+    "native-matched-social.png": {
+      "kind": "Measured validation results",
+      "source": "data/native-refinement-20261007.json",
+      "venue": "Launch thread, post 7"
+    }
+  },
+  "existing_figures_relocated": [
+    "figures/source-diagnostic.svg",
+    "figures/convergence.svg"
+  ]
+}
