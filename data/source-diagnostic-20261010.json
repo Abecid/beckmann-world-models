@@ -1,0 +1,114 @@
+{
+  "inputs": {
+    "complete.json": "fdea1f28864675f7b70e44d1d55e2a994a603240d1a2015d4aa2f91ba8bebdd9",
+    "target.png": "91a1699cc33e9fb5fa108eff73461bc9c148d139243bd0ffb7941ee981728574",
+    "Stabilized BTM_0.00.png": "4b3844c68b732ff8553566a59b40ebcdf7cd4c64dba3db3145bb711e9c3d679e",
+    "Stabilized BTM_0.50.png": "dff3a4cfc6b7a8c4e903d1a5518584ac134a6827a83e1a33daf06ff412a8a25d",
+    "Stabilized BTM_1.00.png": "857d119ec02a95b67cef52dd26e2d87e7c1f0848ca309525609f43fa31ede4ca",
+    "Source-anchored_0.00.png": "b95c69c49e71ef18fcd295770ff74c0fbfbb878bf907bee3d3c9f00e9c354b6e",
+    "Source-anchored_0.50.png": "7883080ffa322844c98976ec2705e5d2c63c3b3c8414979686fac7312acc6195",
+    "Source-anchored_1.00.png": "25ffb2013dea6f88672e157a02b178588ccfa408606999144c882f7739bbeadb",
+    "Full recipe_0.00.png": "41af09c65f81c2ee27e6dbbb09c12669604e482720e96ad3f815c15c9032439c",
+    "Full recipe_0.50.png": "76b6a7bd262527569bd4a7be2c900bfd20bd7657874813b96f66f2f491c456ce",
+    "Full recipe_1.00.png": "90d5173acea48464af72cfaff2b3b16d5ddab7f053b5895fa059fd7e2c581afa"
+  },
+  "aggregate_mse": {
+    "Stabilized BTM": [
+      0.00283102148031402,
+      0.0020273587562971646,
+      0.0014373442377998598,
+      0.0008096834657610291,
+      0.00010507861993068623
+    ],
+    "Source-anchored": [
+      0.0008229593080209775,
+      0.0014286745979916304,
+      0.0011781097590250688,
+      0.0006865912058856338,
+      9.58950822273942e-05
+    ],
+    "Full recipe": [
+      0.0005034170752171324,
+      0.0008677111886855629,
+      0.0007470558623835031,
+      0.0004978452487395973,
+      2.4637508512468128e-05
+    ],
+    "Learned direction": [
+      0.001170093329468121,
+      0.002241156858185099,
+      0.002476182041896714,
+      0.002512691503701111,
+      0.00011234009070903994
+    ]
+  },
+  "visual_sample": {
+    "episode_id": "image_v15.hdf5::demo_4",
+    "history_start": 68,
+    "target_frames": [
+      72,
+      73
+    ],
+    "displayed_target_frame": 73,
+    "source_draw": 0,
+    "crop_xyxy": [
+      0,
+      8,
+      55,
+      63
+    ]
+  },
+  "heatmap": {
+    "formula": "mean_rgb(abs(prediction_uint8 - target_uint8))",
+    "range": [
+      0,
+      102
+    ],
+    "normalization": "shared square-root colour mapping; no per-tile rescaling; no values clipped",
+    "origin": "Original saved, clipped and rounded 8-bit outputs; not raw float tensors",
+    "statistics": {
+      "Stabilized BTM/0": {
+        "mean_abs_rgb_8bit": 6.669421487603306,
+        "max_abs_rgb_8bit": 100.33333333333333
+      },
+      "Stabilized BTM/0.5": {
+        "mean_abs_rgb_8bit": 4.5957024793388435,
+        "max_abs_rgb_8bit": 78.0
+      },
+      "Stabilized BTM/1": {
+        "mean_abs_rgb_8bit": 1.106005509641873,
+        "max_abs_rgb_8bit": 14.666666666666666
+      },
+      "Source-anchored/0": {
+        "mean_abs_rgb_8bit": 3.312947658402204,
+        "max_abs_rgb_8bit": 54.666666666666664
+      },
+      "Source-anchored/0.5": {
+        "mean_abs_rgb_8bit": 3.3919559228650136,
+        "max_abs_rgb_8bit": 68.33333333333333
+      },
+      "Source-anchored/1": {
+        "mean_abs_rgb_8bit": 0.9894214876033058,
+        "max_abs_rgb_8bit": 19.666666666666668
+      },
+      "Full recipe/0": {
+        "mean_abs_rgb_8bit": 2.1118457300275484,
+        "max_abs_rgb_8bit": 38.333333333333336
+      },
+      "Full recipe/0.5": {
+        "mean_abs_rgb_8bit": 2.5197796143250693,
+        "max_abs_rgb_8bit": 54.333333333333336
+      },
+      "Full recipe/1": {
+        "mean_abs_rgb_8bit": 0.4312947658402204,
+        "max_abs_rgb_8bit": 9.333333333333334
+      }
+    }
+  },
+  "caption": "Panel a: one-call MSE on 90 Can windows with four shared source draws. Panel b: one fixed crop and source draw, shown as RGB error maps computed from saved 8-bit outputs. All tiles share the same square-root colour scale. The motion-aware parent predates spatial supervision.",
+  "date": "2026-10-10",
+  "assets": {
+    "figures/source-diagnostic.png": "29a586af71c1f8a5c20aceb1fb2213eea54e147ba8916d77519e55345b9ccb4b",
+    "figures/source-diagnostic.svg": "b8d2925c6c9bdb977b1e9ab66a616269dc5b8ff4fb9a52b4d5bd41e197dd7f4a"
+  }
+}
