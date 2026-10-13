@@ -26,3 +26,23 @@ reducedMotion.addEventListener("change", () => {
   if (reducedMotion.matches) pauseVideos();
   else playVideos();
 });
+
+const copyCitation = document.getElementById("copy-citation");
+const citationBibtex = document.getElementById("citation-bibtex");
+if (copyCitation && citationBibtex) {
+  copyCitation.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(citationBibtex.textContent.trim() + "\n");
+      copyCitation.textContent = "Copied!";
+      setTimeout(() => { copyCitation.textContent = "Copy BibTeX"; }, 2000);
+    } catch {
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.selectNodeContents(citationBibtex);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      copyCitation.textContent = "Text selected";
+      setTimeout(() => { copyCitation.textContent = "Copy BibTeX"; }, 2000);
+    }
+  });
+}

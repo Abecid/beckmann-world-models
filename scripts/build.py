@@ -10,7 +10,7 @@ import shutil
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
-PUBLIC_FILES = ('index.html', 'styles.css', 'app.js', '.nojekyll', 'robots.txt', 'sitemap.xml')
+PUBLIC_FILES = ('index.html', 'styles.css', 'app.js', '.nojekyll', 'robots.txt', 'sitemap.xml', 'beckmann-world-models.bib')
 PUBLIC_DIRS = ('media', 'figures', 'data', 'paper')
 
 class References(HTMLParser):

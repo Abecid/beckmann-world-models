@@ -18,3 +18,10 @@
 #training-cost-context img{width:100%;height:auto}
 #native-refinement-visual{margin:24px 0 32px}
 @media(max-width:650px){.training-method figcaption{font-size:14px}}
+
+/* Citation */
+.citation-heading{flex-wrap:wrap;margin-bottom:20px}
+.citation-actions{display:flex;align-items:center;gap:18px;font-size:14px}
+.citation-code{margin:0;padding:22px 24px;border:1px solid #dce4e5;border-radius:6px;background:#f7f9f9;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace}
+.citation-code code{font:inherit}
+@media(max-width:700px){.citation-code{padding:16px;font-size:12px;line-height:1.7}.citation-actions{font-size:12px;gap:14px}}
